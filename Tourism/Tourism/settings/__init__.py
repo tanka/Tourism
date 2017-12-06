@@ -1,9 +1,9 @@
 from .base import *
 
-# from .production import *
-# print(BASE_DIR)
+from .production import *
+
 
 try:
-	from .local import *
+    from .local import *
 except:
-	pass
+    pass
