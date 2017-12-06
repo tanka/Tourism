@@ -1,0 +1,15 @@
+<html>
+{% extends 'registration/signup2.html' %}
+
+{% block content %}
+  <h2>User Profile Edit</h2>
+  <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+  <h1>{{ user.email }}</h1>
+
+  <br/>
+  <br/>
+
+  <h1>{{ profile.birth_date }} {{ user.country }}</h1>
+  <h1>{{ user.bio }}</h1>
+{% endblock %}
+</html>

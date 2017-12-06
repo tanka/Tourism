@@ -1,0 +1,13 @@
+{% extends 'b.html' %}
+
+{% block content %}
+<div class="col-lg-3 mx-auto text-center" style="background-color: #f59946; padding-bottom: 20px; padding-top: 20px;">
+ <h1>Message Details</h1>
+</div>
+<div class="col-lg-9 mx-auto text-center" style="background-color: #f59946; padding-bottom: 20px; padding-top: 20px;">
+    <form method="POST" class="form-group post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-success">Submit</button>
+    </form>
+<div class="col-lg-8 mx-auto text-center">    
+{% endblock %}    

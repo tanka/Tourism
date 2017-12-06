@@ -1,0 +1,103 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scrolling Nav - Start Bootstrap Template</title>
+
+    <!-- Font Awsome -->
+    <link href="{% static 'ztour/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">]
+
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="{% static 'userhandler/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'userhandler/css/scrolling-nav.css' %}" rel="stylesheet">
+
+    <link href="{% static 'ztour/css/creative.min.css' %}" rel="stylesheet">
+     <style type="text/css">
+
+      
+
+      .bg-dark {
+      color: #fff;
+      background-color: #fdfbfb!important;
+      }
+
+    </style>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" style="color: #f05f40" href="/">HEMCO TOURS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                {% if user.is_authenticated %}
+                <a class="nav-link js-scroll-trigger" style="color: rgba(134, 55, 55, 0.7)" href="{% url 'logout' %}" >logout</a>
+                {% else %}
+                <a class="nav-link js-scroll-trigger" style="color: rgba(134, 55, 55, 0.7)" href="{% url 'login' %}">login</a>
+                {% endif %}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 mx-auto">
+            
+              {% block content %}
+
+              {% endblock %}
+            
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'userhandler/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'userhandler/vendor/popper/popper.min.js' %}"></script>
+    <script src="{% static 'userhandler/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'userhandler/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="{% static 'userhandler/js/scrolling-nav.js' %}"></script>
+
+  </body>
+
+</html>

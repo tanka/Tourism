@@ -1,0 +1,35 @@
+<html>
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <!-- 
+    Put Here Gallery
+   -->
+<div align="center" style="background-color:#ffffffb5; padding:25">
+	<h2 style="color: #f05f40">BOOK YOUR TOUR !!</h2>
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="HXB2HCPCBTGG2">
+
+		<table style="color: #f05f40">
+		<tr><td><input type="hidden" name="on0" value="Number of People (age above 8 years) visiting">Number of People (aged 8 years and above)</td></tr><tr><td><select name="os0">
+		  <option value="1-5">1-5 $25.00 USD</option>
+		  <option value="6-10">6-10 $80.00 USD</option>
+		  <option value="10-15">10-15 $125.00 USD</option>
+		</select> </td></tr>
+		</table>
+
+		<input type="hidden" name="currency_code" value="USD">
+		<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+		<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+	</form>
+
+</div>
+<script>(function(b,i,d,s){d=document;s=d.createElement('script');
+s.async=1;s.src=b;window.PayzardAccountId=i;
+d.getElementsByTagName('head')[0].appendChild(s);
+})("https:\/\/payzard.com\/payzard.js","acc_iB91xHHGJN5CF7NerPhPxORx");</script>
+
+
+{% endblock %}
+</html>
