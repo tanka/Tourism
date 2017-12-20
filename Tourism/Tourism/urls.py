@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 
 from ztour.views import home, ContactView, BirdWatchingView, BookView, MessagesubmittedView
 from userhandler.views import signup
@@ -31,3 +32,7 @@ urlpatterns = [
     url(r'^birdwatching', BirdWatchingView.as_view()),
     url(r'^book', BookView.as_view()),
 ]
+
+# Change admin site title
+admin.site.site_header = _("HEMCO Site Administration")
+admin.site.site_title = _("HEMCO Admin")
