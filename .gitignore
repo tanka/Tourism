@@ -6,3 +6,5 @@ requirements.txt
 Tourism/settings/__pycache__/
 Tourism/Tourism/settings/__pycache__*
 Tourism/static/ztour/
+Tourism/static/
+
