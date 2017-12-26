@@ -55,7 +55,25 @@
   </head>
 
   <body id="page-top">
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=363729840755027';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script>
 
+     <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=363729840755027';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+  
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
@@ -65,6 +83,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/contact">Drop Message</a>
+            </li>
             <li class="nav-item">
               {% if user.is_authenticated %}
                 <a class="nav-link js-scroll-trigger fa fa-sign-out" aria-hidden="true" href="/accounts/logout/" style="padding-top: 11px"> logout</a>
@@ -73,16 +104,10 @@
               {% endif %}
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/contact">Drop Message</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
+              {% if user.is_authenticated %}
+              {% else %}
               <a class="nav-link js-scroll-trigger" href="/signup">Sign Up</a>
+              {% endif %}
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/profile">profile</a>
@@ -573,52 +598,38 @@
       </div>
     </section>
 
-    <!-- <section class="bg-primary" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got to work to get the Best!</h2>
-            <hr class="light">
-            <p class="text-faded">Lets Do it.  Everything you need to get your new website up and running in no time! All of the templates and themes on are open source, and easy to use. No strings attached!  </p>
-            <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Book your Tour!</a>
-            
-          </div>
-        </div>
-      </div>
-    </section> -->
-
     <div class="call-to-action bg-dark">
       <div class="container text-center">
         <!-- <h2>Experience the Tranquility of Nature</h2> -->
         <a class="btn btn-default btn-sm sr-button" href=/book>Book Now !</a>
+
       </div>
     </div>
 
+    <!-- FB Page Plugin -->
     <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h4 class="section-heading">Let's Get In Touch!</h4>
+      <div class="row">
+        <div class="col-lg-12 mx-auto text-center">
+         <h4 class="section-heading">Let's Get In Touch!</h4>
             <hr class="primary">
+        </div>    
+      </div>
+
+      <div class="row"> 
+        <div class="col-lg-4 mx-auto text-center">   
             <p>HEMCO TOURS and TREKS</p>
             <p>Changangkha, Thimphu</p>
             <p>P.O Box # 342</p>
+            <p>+975-77200613</p>
+            <p><a href="mailto:your-email@your-domain.com">arunadhikari405@gmail.com</a></p>
             <p>
               <a href="https://www.google.com/maps/place/HEMCO+Tours/@27.4777987,89.6292999,17z/data=!3m1!4b1!4m5!3m4!1s0x39e1941890f5f071:0x5775e1d5765532c1!8m2!3d27.4777987!4d89.6314886?hl=en-AU" target="_blank">On Google Map</a>
             </p>
-          </div>
         </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x sr-contact"></i>
-            <p>+975-77200613</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-            <p>Arun kr. Adhikari
-              <a href="mailto:your-email@your-domain.com">arunadhikari405@gmail.com</a>
-            </p>
-          </div>
+
+        <div class="col-lg-8 mx-auto text-center">
+          <div class="fb-page" data-href="https://www.facebook.com/hemcoToursAndTreks/" data-tabs="timeline" data-width="500" data-height="350" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/hemcoToursAndTreks/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/hemcoToursAndTreks/">HEMCO Tours and Treks</a></blockquote></div>
+
         </div>
       </div>
     </section>
