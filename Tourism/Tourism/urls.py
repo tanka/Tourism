@@ -22,7 +22,7 @@ from userhandler.views import signup
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin-hemco/', admin.site.urls),
     url(r'^$', home),
     url(r'^contact/', ContactView.as_view()),
     url(r'^messagesubmitted/', MessagesubmittedView.as_view()),
