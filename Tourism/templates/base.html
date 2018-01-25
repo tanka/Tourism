@@ -15,14 +15,15 @@
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-
+    <!-- Load from CDN -->
     <link href="{% static 'ztour/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Load from CDN -->
     <link href="{% static 'ztour/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
 
-
+    <!-- Load from CDN -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
@@ -83,7 +84,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#services">Services</a>
             </li>
@@ -96,17 +96,18 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/contact">Drop Message</a>
             </li>
+            <!-- <li class="nav-item">
+              {% if user.is_authenticated %}
+              <a class="nav-link js-scroll-trigger" href="/userhandler/{{ request.user.id}}/">User Panel</a>
+              {% else %}
+              <a class="nav-link js-scroll-trigger" href="/signup">Sign Up</a>
+              {% endif %}
+            </li> -->
             <li class="nav-item">
               {% if user.is_authenticated %}
                 <a class="nav-link js-scroll-trigger fa fa-sign-out" aria-hidden="true" href="/accounts/logout/" style="padding-top: 11px"> logout</a>
               {% else %}
               <a class="nav-link js-scroll-trigger fa fa-sign-in" aria-hidden="true" href="/accounts/login/" style="padding-top: 11px"> login</a>
-              {% endif %}
-            </li>
-            <li class="nav-item">
-              {% if user.is_authenticated %}
-              {% else %}
-              <a class="nav-link js-scroll-trigger" href="/signup">Sign Up</a>
               {% endif %}
             </li>
             <!-- <li class="nav-item">
@@ -152,13 +153,13 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box">
+            <!-- <div class="service-box">
               <a class="nav-link js-scroll-trigger" href="#portfolio">
                 <i class="fa fa-2x fa-twitter text-primary sr-icons"></i>
               </a>  
               <h7>Bird Watching Special</h7>
               <p class="text-muted">Get a click of Feathers !!.</p>
-            </div>
+            </div> -->
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box">
@@ -191,7 +192,7 @@
       </div>
     </section>
 
-    <section class="p-0" id="portfolio">
+   <!--  <section class="p-0" id="portfolio">
       <div class="container-fluid">
         <div class=" row text-center">
             <div class="col-lg-10">
@@ -211,9 +212,7 @@
                   <div class="project-category text-faded">
                     Click
                   </div>
-                  <!-- <div class="project-name">
-                    Project name
-                  </div> -->
+                  
                 </div>
               </div>
             </a>
@@ -226,9 +225,7 @@
                   <div class="project-category text-faded">
                     Click
                   </div>
-                 <!--  <div class="project-name">
-                    Project Name
-                  </div> -->
+                 
                 </div>
               </div>
             </a>
@@ -241,9 +238,7 @@
                   <div class="project-category text-faded">
                     Click
                   </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
+                  
                 </div>
               </div>
             </a>
@@ -256,9 +251,7 @@
                   <div class="project-category text-faded">
                     Click
                   </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
+                  
                 </div>
               </div>
             </a>
@@ -271,9 +264,7 @@
                   <div class="project-category text-faded">
                     Click
                   </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
+                  
                 </div>
               </div>
             </a>
@@ -286,20 +277,18 @@
                   <div class="project-category text-faded">
                     Click
                   </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
+                  
                 </div>
               </div>
             </a>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
+   <!--  <br/>
     <br/>
-    <br/>
-    <br/>
+    <br/> -->
     <section class="p-0" id="hiking">
       <div class="container-fluid">
         <div class="col-lg-12 text-center">
@@ -308,8 +297,8 @@
         </div>
         <div class="row no-gutter popup-gallery">
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk6.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk6.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -338,8 +327,8 @@
             </a>
           </div>
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk8.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk8.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -353,8 +342,8 @@
             </a>
           </div>
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk9.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk9.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -368,8 +357,8 @@
             </a>
           </div>
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk10.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk10.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -383,8 +372,8 @@
             </a>
           </div>
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk11.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk11.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -412,8 +401,8 @@
         </div>
         <div class="row no-gutter popup-gallery">
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb8.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb8.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -427,8 +416,8 @@
             </a>
           </div>
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb9.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb9.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -442,8 +431,8 @@
             </a>
           </div>
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb13.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb13.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -457,8 +446,8 @@
             </a>
           </div>
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb10.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb10.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -472,8 +461,8 @@
             </a>
           </div>
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb11.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb11.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                  <div class="project-category text-faded">
@@ -487,8 +476,8 @@
             </a>
           </div>
           <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb7.jpg' %}" alt="">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb15.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb15.jpg' %}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
