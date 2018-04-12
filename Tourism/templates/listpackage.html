@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block section_1 %}
+
+	<section id="services">
+      <div class="container">
+        
+
+	      <div class="row">
+          	<div class="col-lg-4">
+             <!-- inquiry form -->
+              <div class="card card-register mx-auto">
+              	<div class="card-header bg-dark-green font-style">
+                   	<p class="card-title mb-1" style="color: #B78D38; font-size: 1em">Enquiry Form</p>
+                </div>
+                  <div class="card-body">
+                    <form method="POST" class="form-group post-form dark-text">{% csrf_token %}
+                        {{ contact_form.as_p }}
+                        <hr>
+                          <button type="submit" class="save btn btn-primary btn-sm">Submit</button>
+                        
+                    </form>
+                  </div>
+              </div>
+             <!-- inquiry form End -->
+        	</div>
+
+	          <div class="col-lg-8">
+	            <div class="col-lg-12 mx-auto text-center">
+	                <h4 class="section-heading">Our Packages</h4>
+	                <hr class="primary">
+	            </div>
+
+	            <div class="row">     
+	              {% for post in all_posts %}  
+	             <!-- Example Social Card-->
+	              <div class="col-lg-6 card "  style="margin-bottom: 5px;">
+	                <div class="row">
+	                  <div class="col-lg-6 bg-dark-green" style="padding: 0px;">
+	                      <a href="#">
+	                        <img class="card-img-top img-fluid w-100" style="max-height: 190px" alt="" src="/media/{{ post.thumb_nail.document }}">
+	                      </a>
+	                  </div>
+	                  <div class="col-lg-6 bg-dark-green">    
+	                      <div class="card-body">
+	                        <h6 class="card-title mb-1"><a href="#">{{ post.title }}</a></h6>
+	                        <p class="card-text small">{{ post.short_desc }}</p>
+	                      </div>
+	                      <div class="card-body py-2 small">
+	                        <a class="mr-3 d-inline-block" href="/packagedetail/{{ post.id }}">
+	                          <i class="fa fa-fw fa-thumbs-up"></i>Details</a>
+	                         <!-- <a class="mr-3 d-inline-block" href="#">
+	                          <i class="fa fa-fw fa-comment"></i>Comment</a> -->
+	                        <!-- <a class="d-inline-block" href="#">
+	                          <i class="fa fa-fw fa-share"></i>Share</a> -->
+	                      </div>
+	                  </div> 
+	                      <!-- <div class="col-lg-12 card-footer small text-muted" >Posted yesterday</div> -->
+	                </div>      
+	              </div>
+
+	              <!-- End of Social card -->
+
+	              <!-- Druk Path Modal -->
+	              <div class="modal fade" id="modal-drukpath" role="dialog">
+	                <div class="modal-dialog modal-lg">
+	                
+	                  <!-- Druk Path Modal content-->
+	                  <div class="modal-content  bg-dark-maroon">
+	                    <div class="modal-header">
+	                      <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+	                      <h4 class="modal-title">DRUK PATH TREK</h4>
+	                    </div>
+	                    <div class="modal-body">
+	                      <img class="img-fluid" src="/media/{{ post.image.document }}" alt="">
+	                      
+	                      <p style="font-size: small;">{{ post.content }}</p>
+	                      
+	                    </div>
+	                    <div class="modal-footer">
+	                      <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+	                    </div>
+	                  </div>
+	                  
+	                </div>
+	              </div>
+
+	    <!-- End of Modal -->
+
+
+
+	              {% endfor %}
+	            </div>
+
+	          <!-- /Card Columns-->
+	          </div>            
+	      </div>
+	    </div>
+	    <!-- End Container -->
+    </section>
+
+{% endblock %}

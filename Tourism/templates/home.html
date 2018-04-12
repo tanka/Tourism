@@ -1,0 +1,362 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block section_1 %}
+
+	<section id="services">
+      <div class="container">
+        
+
+	      <div class="row">
+	          <div class="col-lg-4">
+	          	<div class="col-lg-12 mx-auto text-center">
+	            <!-- Fb plugin -->
+	            <!-- facebook -->
+			         <div class="col-lg-12 text-center">
+			          <div class="fb-page" data-href="https://www.facebook.com/Tribute-Tours-Treks-366555370488700/" data-tabs="timeline, events, messages" data-width="500" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Tribute-Tours-Treks-366555370488700/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Tribute-Tours-Treks-366555370488700/">Tribute Tours &amp; Treks</a></blockquote></div>
+			        </div> 
+        		<!-- End facebook -->
+        		</div>
+	          </div>
+
+	          <div class="col-lg-8">
+	            <div class="col-lg-12 mx-auto text-center">
+	                <h4 class="section-heading"><strong>Our Packages</strong></h4>
+	                <hr class="primary">
+	            </div>
+
+	            <div class="row">     
+	              {% for post in all_posts %}  
+	             <!-- Example Social Card-->
+	              <div class="col-lg-6 card "  style="margin-bottom: 5px;">
+	                <div class="row">
+	                  <div class="col-lg-6 bg-dark-green" style="padding: 0px;">
+	                      <a href="#">
+	                        <img class="card-img-top img-fluid w-100" style="max-height: 190px" alt="" src="/media/{{ post.thumb_nail.document }}">
+	                      </a>
+	                  </div>
+	                  <div class="col-lg-6 bg-dark-green">    
+	                      <div class="card-body">
+	                        <h6 class="card-title mb-1"><a href="{% url 'packagedetail-view' pk=post.id %}">{{ post.title }}</a></h6>
+	                        <p class="card-text small">{{ post.short_desc }}</p>
+	                      </div>
+	                      <div class="card-body py-2 small">
+	                        <a class="mr-3 d-inline-block" href="{% url 'packagedetail-view' pk=post.id %}">
+	                          <i class="fa fa-fw fa-info-circle"></i>Details</a>
+	                         <!-- <a class="mr-3 d-inline-block" href="#">
+	                          <i class="fa fa-fw fa-comment"></i>Comment</a> -->
+	                        <!-- <a class="d-inline-block" href="#">
+	                          <i class="fa fa-fw fa-share"></i>Share</a> -->
+	                      </div>
+	                  </div> 
+	                      <!-- <div class="col-lg-12 card-footer small text-muted" >Posted yesterday</div> -->
+	                </div>      
+	              </div>
+
+	              <!-- End of Social card -->
+
+	              
+	              {% endfor %}
+	              
+	            </div>
+
+	            <div class="col-lg-12" align="center">
+	              
+	            <a class="mr-3 d-inline-block" href="/listpackage">
+	                          <i class="fa fa-fw fa-thumbs-up"></i>View All Itenereary</a>
+	            </div>
+	          <!-- /Card Columns-->
+	          </div>            
+	      </div>
+	    </div>
+	    <!-- End Container -->
+    </section>
+
+{% endblock %}
+
+
+{% block section_2 %}
+  <br>
+	<section class="p-0" id="travelinfo">
+      <div class="container">
+        
+
+        <div class="row">
+            <div class="col-lg-4">
+                 <!-- inquiry form -->
+               	<br>
+             	<br>
+             	<br>
+
+                  <div class="card card-register mx-auto">
+                    <div class="card-header bg-dark-green font-style">
+                    	<p class="card-title mb-1" style="color: #B78D38; font-size: 1em">Enquiry Form</p>
+                    </div>
+                      <div class="card-body">
+                        <form method="POST" class="form-group post-form dark-text">{% csrf_token %}
+                            {{ contact_form.as_p }}
+                            <hr>
+                              <button type="submit" class="save btn btn-primary btn-sm font-style">Submit</button>
+                            
+                        </form>
+                      </div>
+                  </div>
+                 <!-- inquiry form End -->
+                 <br>
+                 <br>
+
+                <div class="card card-register mx-auto">
+                	<div class="card-header bg-dark-green font-style">
+                    	<p class="card-title mb-1" style="color: #B78D38; font-size: 1em">Important Links</p>
+                    </div>
+
+                    <div class="card-body">
+                    	<div class="col-lg-12 card bg-dark-green" style="padding: 5px">
+                        	<a href="http://www.tourism.gov.bt">Tourism Council of Bhutan</a>
+                        	<p>Tourism regulatory body of Bhutan</p>
+                    	</div>
+                        <br>
+                    	<div class="col-lg-12 card bg-dark-green" style="padding: 5px">
+                    		<a href="http://drukair.bt/">Druk Air</a>
+                    		<p>Government run airline of Bhutan</p>
+                		</div>
+                		<br>
+	                	<div class="col-lg-12 card bg-dark-green" style="padding: 5px">
+	                        <a href="http://www.bhutanairlines.bt/">Bhutan Airline</a>
+	                        <p>commercial airline of Bhutan</p>
+	                    </div>
+	                    <br>
+	                    <div class="col-lg-12 card bg-dark-green" style="padding: 5px">
+	                        <a href="http://www.kuenselonline.com/">Kuensel</a>
+	                        <p>National news paper service of Bhutan</p>
+	                    </div>
+
+                    </div>
+
+                </div>	
+            </div>
+
+            <div class="col-lg-8">
+              <div class="row">                
+               <!-- Example Social Card-->
+                <div class="col-lg-12 mx-auto text-center" style="padding-top: 4px; padding-bottom: 7px">
+                  <h4 class="section-heading"><strong>Travel Info</strong></h4>
+                  <hr class="primary">
+                </div>
+                <div class="col-lg-12 card"  style="margin-bottom: 5px">
+                  <div class="row">
+                    <div class="col-lg-12 card bg-dark-green" style="padding: 5px">
+                        <h6 class="card-title mb-1"><a href="https://en.wikipedia.org/wiki/Bhutan">About Bhutan</a></h6>
+                    </div>
+                    <div class="col-lg-12 card">    
+                        <div class="card-body">
+                          
+                          <p class="card-text small" style="color: #000"><b>Bhutan</b> (<span class="nowrap"><span class="IPA nopopups noexcerpt"><a href="/wiki/Help:IPA/English" title="Help:IPA/English">/<span style="border-bottom:1px dotted"><span title="'b' in 'buy'">b</span><span title="/uː/: 'oo' in 'goose'">uː</span><span title="/ˈ/: primary stress follows">ˈ</span><span title="'t' in 'tie'">t</span><span title="/ɑː/: 'a' in 'father'">ɑː</span><span title="'n' in 'nigh'">n</span></span>/</a></span></span>; <span style="font-family: 'Qomolangma-Dunhuang', 'Qomolangma-Uchen Sarchen', 'Qomolangma-Uchen Sarchung', 'Qomolangma-Uchen Suring', 'Qomolangma-Uchen Sutung', 'Qomolangma-Title', 'Qomolangma-Subtitle', 'Qomolangma-Woodblock', 'DDC Uchen', 'DDC Rinzin', Kailash, Jomolhari, 'TCRC Youtso Unicode', 'Tibetan Machine Uni', Wangdi29, 'Noto Sans Tibetan', 'Microsoft Himalaya'; font-size:1.25em; vertical-align:top; word-wrap: break-word;">འབྲུག་ཡུལ་</span> <i><a href="/wiki/Druk" title="Druk">Druk</a> Yul</i>), officially the <b>Kingdom of Bhutan</b> (<span style="font-family: 'Qomolangma-Dunhuang', 'Qomolangma-Uchen Sarchen', 'Qomolangma-Uchen Sarchung', 'Qomolangma-Uchen Suring', 'Qomolangma-Uchen Sutung', 'Qomolangma-Title', 'Qomolangma-Subtitle', 'Qomolangma-Woodblock', 'DDC Uchen', 'DDC Rinzin', Kailash, Jomolhari, 'TCRC Youtso Unicode', 'Tibetan Machine Uni', Wangdi29, 'Noto Sans Tibetan', 'Microsoft Himalaya'; font-size:1.25em; vertical-align:top; word-wrap: break-word;">འབྲུག་རྒྱལ་ཁབ་</span> <i><span lang="dz-Latn">Druk Gyal Khap</span></i>),<sup id="cite_ref-Driem478_10-0" class="reference"><a href="#cite_note-Driem478-10">[10]</a></sup> is a landlocked country in <a href="/wiki/South_Asia" title="South Asia">South Asia</a>. Located in the <a href="/wiki/Eastern_Himalayas" class="mw-redirect" title="Eastern Himalayas">Eastern Himalayas</a>, it is bordered by <a href="/wiki/Tibet_Autonomous_Region" title="Tibet Autonomous Region">Tibet Autonomous Region</a> of <a href="/wiki/China" title="China">China</a> in the north, the <a href="/wiki/Sikkim" title="Sikkim">Sikkim</a> state of <a href="/wiki/India" title="India">India</a> and the <a href="/wiki/Chumbi_Valley" title="Chumbi Valley">Chumbi Valley</a> of <a href="/wiki/Tibet" title="Tibet">Tibet</a> in the west, the <a href="/wiki/Arunachal_Pradesh" title="Arunachal Pradesh">Arunachal Pradesh</a> state of India in the east, and the state of <a href="/wiki/Assam" title="Assam">Assam</a> and <a href="/wiki/North_Bengal" title="North Bengal">North Bengal</a> in the south. Bhutan is geopolitically in South Asia and is the region's second least populous nation after the <a href="/wiki/Maldives" title="Maldives">Maldives</a>. <a href="/wiki/Thimphu" title="Thimphu">Thimphu</a> is its capital and largest city, while <a href="/wiki/Phuntsholing" title="Phuntsholing">Phuntsholing</a> is its financial center.</p>
+
+                          <p class="card-text small" style="color: #000"><a href="/wiki/Buddhism" title="Buddhism">Buddhism</a> was first introduced to Bhutan in the 7th century AD. Tibetan king <a href="/wiki/Songts%C3%A4n_Gampo" class="mw-redirect" title="Songtsän Gampo">Songtsän Gampo</a><sup id="cite_ref-Padel_23-0" class="reference"><a href="#cite_note-Padel-23">[23]</a></sup> (reigned 627–649), a convert to Buddhism, who actually had extended the Tibetan Empire into Sikkim and Bhutan,<sup id="cite_ref-24" class="reference"><a href="#cite_note-24">[24]</a></sup> ordered the construction of two Buddhist temples, at <a href="/wiki/Bumthang_(town)" class="mw-redirect" title="Bumthang (town)">Bumthang</a> in central Bhutan and at Kyichu (near <a href="/wiki/Paro,_Bhutan" title="Paro, Bhutan">Paro</a>) in the <a href="/wiki/Paro_Valley" class="mw-redirect" title="Paro Valley">Paro Valley</a>.<sup id="cite_ref-CS1_25-0" class="reference"><a href="#cite_note-CS1-25">[25]</a></sup> Buddhism was propagated in earnest<sup id="cite_ref-Padel_23-1" class="reference"><a href="#cite_note-Padel-23">[23]</a></sup> in 746<sup id="cite_ref-Hattaway_26-0" class="reference"><a href="#cite_note-Hattaway-26">[26]</a></sup> under King Sindhu Rāja (<i>also</i> Künjom;<sup id="cite_ref-Rennie_27-0" class="reference"><a href="#cite_note-Rennie-27">[27]</a></sup> Sendha Gyab; Chakhar Gyalpo), an exiled <a href="/wiki/Indian_people" title="Indian people">Indian</a> king who had established a government in Bumthang at Chakhar Gutho Palace.<sup id="cite_ref-HBB_28-0" class="reference"><a href="#cite_note-HBB-28">[28]</a></sup><sup class="reference" style="white-space:nowrap;">:<span>35</span></sup> <sup id="cite_ref-Harding_29-0" class="reference"><a href="#cite_note-Harding-29">[29]</a></sup><sup class="reference" style="white-space:nowrap;">:<span>13</span></sup>
+                          (Source: <a href="https://en.wikipedia.org/wiki/Bhutan">https://en.wikipedia.org/wiki/Bhutan</a> )	
+                          </p>
+                        </div>
+                    </div> 
+                       <!--  <div class="col-lg-12 card-footer small text-muted">Posted yesterday</div> -->
+                  </div>      
+                </div>
+                
+                <!-- Example Social Card-->
+                <div class="col-lg-12 card"  style="margin-bottom: 5px">
+                  <div class="row">
+                    <div class="col-lg-12 card bg-dark-green" style="padding: 5px">
+                        <h6 class="card-title mb-1"><a href="http://www.tourism.gov.bt">Visa Requirments</a></h6>
+                    </div>
+                    <div class="col-lg-12 card">    
+                        <div class="card-body">
+                          
+                          <p class="card-text small" style="color: #000">Indian, Bangladeshis and Maldivian nationals can obtain a visa at the port of entry on producing a valid passport with a minimum of 6 month validity (Indian nationals may also use their Voters Identity Card (VIC)).
+                          </p>
+                          <p class="card-text small" style="color: #000">All other tourists must obtain a visa clearance prior to travel to Bhutan.  Visas are processed through an online system by your licensed Bhutanese tour operator, directly or through a foreign travel agent.
+                          </p>
+                          <p class="card-text small" style="color: #000">You are required to send the photo-page of your passport to your tour operator who will then apply for your visa.  The visa will be processed by the Tourism Council of Bhutan (TCB) once the full payment of your holiday (including a USD $40 visa fee) has been wire transferred and received in the TCB bank account.  Once received the visa clearance will be processed within 72 working hours
+                          </p>
+
+                          <p class="card-text small" style="color: #000">At your point of entry you will be required to show your visa clearance letter, the visa will then be stamped into your passport. (Source: <a href="http://www.tourism.gov.bt">Tourism Council of Bhutan</a>)
+                          </p>
+                        </div>
+                    </div> 
+                       <!--  <div class="col-lg-12 card-footer small text-muted">Posted yesterday</div> -->
+                  </div>      
+                </div>
+
+                <!-- Example Social Card-->
+                <div class="col-lg-12 card"  style="margin-bottom: 5px">
+                  <div class="row">
+                    <div class="col-lg-12 card bg-dark-green" style="padding: 5px">
+                        <h6 class="card-title mb-1"><a href="http://www.tourism.gov.bt">Climate</a></h6>
+                    </div>
+                    <div class="col-lg-12 card">    
+                        <div class="card-body">
+                          
+                          <p class="card-text small" style="color: #000"><strong>The climate in Bhutan is extremely varied. This variation in the climatic conditions and average temperature can be attributed to two main factors, the vast differences in altitude present in the country and the influence of the north Indian monsoons.</strong>	
+                          </p>
+
+                          <p class="card-text small" style="color: #000">Southern Bhutan has a hot, humid sub-tropical climate that is fairly unchanging throughout the year. Temperatures can vary between 15-30 degrees Celsius. In the Central parts of the country the climate cools a bit, changing to temperate and deciduous forests with warm summers and cool, dry winters. In the far Northern reaches of the kingdom the weather is cold during winter. Mountain peaks are perpetually covered in snow and lower parts are still cool in summer owing to the high altitude terrain.
+                          </p>
+
+                          <p class="card-text small" style="color: #000">The Indian summer monsoon lasts from late-June through late-September and is mostly confined to the southern border region of Bhutan. It brings heavy rain and high humidity, to the southern region.  These rains bring between 60 and 90 percent of the western region's rainfall. Annual precipitation ranges widely in various parts of the country. In the northern border region to Tibet gets about forty millimeters of precipitation a year which is primarily snow. In the temperate central regions, a yearly average of around 1,000 millimeters is more common, and 7,800 millimeters per year has been registered at some locations in the humid, subtropical south, ensuring the thick tropical forest, or savanna.  
+                          </p>
+
+                          <p class="card-text small" style="color: #000">hutan's generally dry spring starts in early March and lasts until mid-April. Summer weather commences in mid-April with occasional showers and continues to late June. The heavier summer rains last from late June through late September which are more monsoonal along the southwest border.Autumn, from late September or early October to late November, follows the rainy season. It is characterized by bright, sunny days and some early snowfalls at higher elevations.From late November until March, winter sets in, with frost throughout much of the country and snowfall common above elevations of 3,000 meters. The winter northeast monsoon brings gale-force winds at the highest altitudes through high mountain passes, giving Bhutan its name - Drukyul, which in the Dzongkha language mean Land of the Thunder Dragon.  (Source: <a href="http://www.tourism.gov.bt">Tourism Council of Bhutan</a>)
+                          </p>
+                        </div>
+                    </div> 
+                       <!--  <div class="col-lg-12 card-footer small text-muted">Posted yesterday</div> -->
+                  </div>      
+                </div>
+
+                <!-- Example Social Card-->
+                <div class="col-lg-12 card"  style="margin-bottom: 5px">
+                  <div class="row">
+                    <div class="col-lg-12 card bg-dark-green" style="padding: 5px">
+                        <h6 class="card-title mb-1"><a href="http://www.tourism.gov.bt">Gross National Happiness</a></h6>
+                    </div>
+                    <div class="col-lg-12 card">    
+                        <div class="card-body">
+                          
+                          <p class="card-text small" style="color: #000"><strong>Gross National Happiness: Development Philosophy of Bhutan.</strong> Economists the world over have argued that the key to happiness is obtaining and enjoying material development. Bhutan however, adheres to a very different belief and advocates that amassing material wealth does not necessarily lead to happiness. Bhutan is now trying to measure progress not by the popular idea of Gross Domestic Product but by through Gross National Happiness.  His Majesty the third Druk Gyalpo Jigme Dorji Wangchuck expressed his view on the goals of development as making “the people prosperous and happy.” With this strong view in mind, the importance of “prosperity and happiness,” was highlighted in the King’s address on the occasion of Bhutan’s admission to the United Nations in 1971.
+                          </p>
+                          <p class="card-text small" style="color: #000">While the emphasis is placed on both, prosperity and happiness, the latter is considered to be more significant. The fourth Druk Gyalpo emphasized that for Bhutan “Gross National Happiness,” is more important than “Gross National Product.” Thus, Gross National Happiness is now being fleshed out by a wide range of professionals, scholars and agencies across the world.  Druk Gyalpo Jigme Singye Wangchuck said that the rich are not always happy while the happy generally considered themselves rich. While conventional development models stressed on economic growth as the ultimate objective, the concept of Gross National Happiness is based on the premise that true development of human society takes place when material and spiritual development occur side by side to complement and reinforce each other.  The philosophy of Gross National Happiness has recently received international recognition and the UN has implemented a resolution “…recognizing that the gross domestic product [...] does not adequately reflect the happiness and well-being of people,” and that “…the pursuit of happiness is a fundamental human goal”.  (Source: <a href="http://www.tourism.gov.bt">Tourism Council of Bhutan</a>)
+                          </p>
+                        </div>
+                    </div> 
+                       <!--  <div class="col-lg-12 card-footer small text-muted">Posted yesterday</div> -->
+                  </div>      
+                </div>
+            <!-- /Card Columns-->
+            </div>            
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block section_3 %}
+	<!-- <section class="p-0" id="portfolio">
+      <div class="container-fluid">
+        <div class="col-lg-12 text-center">
+            <h4 class="section-heading" style="padding-top: 25px"><strong>Our Recents Pictures</strong></h4>
+            <hr class="primary">
+        </div>
+        <div class="row no-gutter popup-gallery">
+          <div class="col-lg-2 col-sm-3">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk6.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk6.jpg' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Click
+                  </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-3">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk7.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk7.jpg' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Click
+                  </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-3">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk8.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk8.jpg' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Click
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-3">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk9.jpg' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk9.jpg' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Click
+                  </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-3">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk10.JPG' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk10.JPG' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Click
+                  </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 col-sm-3">
+            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk11.JPG' %}">
+              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk11.JPG' %}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Click
+                  </div>
+                 
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+{% endblock %}
+
+
+{% block section_4 %}
+    <section class="p-0" id="travelinfo">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-lg-12" style="margin-top: 20px">
+            <div class="col-lg-12 mx-auto text-center">
+              <h4 class="section-heading"><strong>About Us</strong></h4>
+              <hr class="primary">
+            </div>  
+            <div class="col-lg-12 card">    
+                    <div class="card-body">
+                      
+                      <p class="card-text small" style="color: #000; font-size: 2em"><h4>We are a Company built by Tour Guides.</h4> </p>  
+                      <p class="card-text small" style="color: #000; font-size: 1em">We are group of 5 young, strong and dedicated tour guides who have come together to built a tour company that will stand to all expectaions of our valuable guests.  We will ensure you will be visiting Bhutan multiple times.
+                      </p>
+                      <p class="card-text small" style="color: #000; font-size: 1em">With a sole motive of providing the best service possible we are here waiting for you to hopin to "Tribute Tours &amp treks".  Together we will Soar like Raven in the Himalayas and Delve like the Tigers in the jungles of Bhutan.  Contact us via "Enquiry Form" given above or just message us at info@tributetours.com   
+                      </p>
+                      
+                    </div>
+            </div> 
+            <br>
+          </div>
+
+          
+        </div>
+      </div>
+    </section>
+{% endblock %}

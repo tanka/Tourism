@@ -26,8 +26,10 @@ SECRET_KEY = 's7itw%ca#*_w3-4cqnhyn@1ur-!%0em)i7#y$0%rhsb^av4x+gkn8s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["128.199.103.26", "http://hemcotoursandtreks.com",
-                 "www.hemcotoursandtreks.com", "hemcotoursandtreks.com"]
+ALLOWED_HOSTS = ["128.199.103.26"]
+
+# ALLOWED_HOSTS = ["128.199.103.26", "http://hemcotoursandtreks.com",
+#                  "www.hemcotoursandtreks.com", "hemcotoursandtreks.com"]
 
 
 # Application definition
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ztour',
     'userhandler',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +137,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': "advanced",
+    'width' : 758,
+    'height' : 118,
+    'plugins': "spellchecker",
+    'theme_advanced_buttons3_add': "|,spellchecker",
+}

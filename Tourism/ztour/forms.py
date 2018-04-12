@@ -8,3 +8,8 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ('name', 'email', 'contact_number', 'message')
+
+class QuickForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('name', 'email')

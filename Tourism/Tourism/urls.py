@@ -15,24 +15,34 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.utils.translation import ugettext_lazy as _
 
-from ztour.views import home, ContactView, BirdWatchingView, BookView, MessagesubmittedView
+from ztour.views import HomeView, ContactView, ListPackageView, BookView, MessagesubmittedView, PackageDetailView
 from userhandler.views import signup
 
 
 urlpatterns = [
-    url(r'^admin-hemco/', admin.site.urls),
-    url(r'^$', home),
+    url(r'^admin-tour/', admin.site.urls),
+    url(r'^$', HomeView.as_view()),
     url(r'^contact/', ContactView.as_view()),
     url(r'^messagesubmitted/', MessagesubmittedView.as_view()),
     #url(r'^contact/(?P<id>\d+)/', ContactView.as_view()),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^signup/$', signup, name='signup'),
-    url(r'^birdwatching', BirdWatchingView.as_view()),
+    url(r'^listpackage', ListPackageView.as_view()),
+    url(r'^packagedetail/(?P<pk>\d+)/$', PackageDetailView.as_view(),
+        name='packagedetail-view',),
     url(r'^book', BookView.as_view()),
-]
+    # Profile Views and related URLs in userhandler app
+    url(r'^userhandler/', include('userhandler.urls')),
+
+
+    # django-tinymce
+    url(r'^tinymce/', include('tinymce.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Change admin site title
-admin.site.site_header = _("HEMCO Site Administration")
-admin.site.site_title = _("HEMCO Admin")
+admin.site.site_header = _("Tour Site Administration")
+admin.site.site_title = _("Tour Admin")

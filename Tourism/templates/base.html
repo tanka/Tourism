@@ -8,1029 +8,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" href="{% static 'ztour/img/favicon-32x32.png' %}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{% static 'ztour/img/favicon-16x16.png' %}" sizes="32x32">
-  
-    <title>HEMCO Tours &amp; Treks</title>
+
+    <title>Tribute Tours</title>
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- Load from CDN -->
     <link href="{% static 'ztour/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Load from CDN -->
-    <link href="{% static 'ztour/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
-
-    <!-- Load from CDN -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-    <!-- Plugin CSS -->
-    <!-- <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet"> -->
-
-    <link href="{% static 'ztour/vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <!-- <link href="css/creative.min.css" rel="stylesheet"> -->
-
-    <link href="{% static 'ztour/css/creative.min.css' %}" rel="stylesheet">
-    <link href="{% static 'ztour/css/carousel.css' %}" rel="stylesheet">
-
-    <!-- Add this css File in head tag-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
-
-    <style type="text/css">
-      header.masthead {
-        height: 60%;
-        min-height: 0px;
-      }
-
-    section {
-      padding: 30px 0;
-    }
-</style>
+    <link href="{% static 'ztour/css/modern-business.css' %}" rel="stylesheet">
 
   </head>
 
-  <body id="page-top">
-    <div id="fb-root"></div>
-      <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=363729840755027';
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-      </script>
+  <body class="bg-light-cream">
 
-     <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=363729840755027';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-  
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark-green-trans">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">HEMCO Tours</a>
+        <a class="navbar-brand" href="index.html" style="font-family: 'Cinzel Decorative', cursive;">Tribute Tours Treks</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+              <a class="nav-link" href="/listpackage">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#travelinfo">Travel Info</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Informations
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="portfolio-item.html">Album</a>
+                <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+                <a class="dropdown-item" href="pricing.html">Calender</a>
+                <a class="dropdown-item" href="faq.html">FAQ</a>
+              </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-
-            <li class="nav-item dropdown open">
-                    <a href="#" class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Tour Packages <b class="caret"></b></a>
-                    <ul class="dropdown-menu" style="background-color: #05040287;">
-                        <li>
-                          <div style="margin:10px; color: #b3b5b8; cursor: pointer;" data-toggle="modal" data-target="#modal-drukpath">DRUK PATH TREK</div>
-                        </li>
-                        <li>
-                            <div style="margin:10px; color: #b3b5b8; cursor: pointer;" data-toggle="modal" data-target="#modal-jomolharigasa">JOMOLHARI LAYA GASA TREK</div>
-                        </li>
-                        <li>
-                            <div style="margin:10px; color: #b3b5b8; cursor: pointer;" data-toggle="modal" data-target="#modal-snowmanII">SNOWMAN TREK II</div>
-                        </li>
-                        <li>
-                            <div style="margin:10px; color: #b3b5b8; cursor: pointer;" data-toggle="modal" data-target="#modal-nabjikorphu">NABJI KORPHU TREK</div>
-                        </li>
-                        <li>
-                            <div style="margin:10px; color: #b3b5b8; cursor: pointer;" data-toggle="modal" data-target="#modal-meraksakteng">MERAK SAKTENG TREK</div>
-                        </li>
-                        <li>
-                            <div style="margin:10px; color: #b3b5b8; cursor: pointer;" data-toggle="modal" data-target="#modal-adventure">ADVENTURE</div>
-                        </li>
-                    </ul>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/contact">Drop Message</a>
-            </li>
-          
-            <!-- <li class="nav-item">
-              {% if user.is_authenticated %}
-              <a class="nav-link js-scroll-trigger" href="/userhandler/{{ request.user.id}}/">User Panel</a>
-              {% else %}
-              <a class="nav-link js-scroll-trigger" href="/signup">Sign Up</a>
-              {% endif %}
-            </li> -->
-           <!--  <li class="nav-item">
-              {% if user.is_authenticated %}
-                <a class="nav-link js-scroll-trigger fa fa-sign-out" aria-hidden="true" href="/accounts/logout/" style="padding-top: 11px"> logout</a>
-              {% else %}
-              <a class="nav-link js-scroll-trigger fa fa-sign-in" aria-hidden="true" href="/accounts/login/" style="padding-top: 11px"> login</a>
-              {% endif %}
-            </li> -->
-            <!-- <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/profile">profile</a>
-            </li> -->
           </ul>
         </div>
       </div>
     </nav>
 
-    <header class="masthead">
-      <div class="header-content">
-        <div class="header-content-inner">
-          <h1 id="homeHeading" style="font-size: 25px;">HEMCO Tours Welcomes {% if request.user.is_authenticated %} {{ request.user.username }} {% else %} You {% endif %} to Bhutan</h1>
-          <hr>
-          <!-- <p style="color: rgb(255, 255, 255);">Experience the best of Hospitality</p> -->
-          <div class="row">
-            <div class="col-lg-8 text-center">
-              <a class="col-lg-5 btn btn-primary btn-sm sr-button js-scroll-trigger" href="#services">Tour &amp; Trek in Bhutan</a>
-            </div>
-            <div class="col-lg-4 text-center">
-              <div class="fb-page" 
-                data-href="https://www.facebook.com/hemcoToursAndTreks/"
-                data-width="380" 
-                data-height="70"
-                data-hide-cover="false"
-                data-show-facepile="true"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h4 class="section-heading">At Your Service</h4>
-            <hr class="primary">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <!-- <div class="service-box">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">
-                <i class="fa fa-2x fa-twitter text-primary sr-icons"></i>
-              </a>  
-              <h7>Bird Watching Special</h7>
-              <p class="text-muted">Get a click of Feathers !!.</p>
+    <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          {% for header in all_header %}
+          {% if header.activate %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ header.position }}" {% if header.position == "0" %} class="active" {% endif %}></li>
+          {% endif %}  
+          {% endfor %} 
+        <!--   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          {% for header in all_header %}
+          {% if header.activate %}
+          <div {% if header.position == "0" %} class="carousel-item active" {% else %} class="carousel-item" {% endif %}  style="background-image: url('/media/{{ header.image.document }}')">
+            <!-- <div class="carousel-caption d-none d-md-block">
+              <h3>First Slide</h3>
+              <p>This is a description for the first slide.</p>
             </div> -->
           </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box">
-              <a class="nav-link js-scroll-trigger" href="#hiking">
-                <i class="fa fa-2x fa-tree text-primary sr-icons"></i>
-              </a>
-              <h7>Hiking Special</h7>
-              <p class="text-muted">Get your boots really dirty !</p>
+          {% endif %}  
+          {% endfor %}
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <!-- <div class="carousel-item" style="background-image: url('http://127.0.0.1:8000/media/images/header10.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Second Slide</h3>
+              <p>This is a description for the second slide.</p>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box">
-              <a class="nav-link js-scroll-trigger" href="#culture">
-                <i class="fa fa-2x fa-gratipay text-primary sr-icons"></i>
-              </a>
-              <h7>Bhutanese Cultural Tour</h7>
-              <p class="text-muted">Experience the Bhutanese hospitality and Landscapes !</p>
+          </div> -->
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <!-- <div class="carousel-item" style="background-image: url('http://127.0.0.1:8000/media/images/header10.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Third Slide</h3>
+              <p>This is a description for the third slide.</p>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box">
-              <a class="nav-link js-scroll-trigger" href="#general">
-                <i class="fa fa-2x fa-free-code-camp text-primary sr-icons"></i>
-              </a>
-              <h7>Crafted for You</h7>
-              <p class="text-muted">Not sure? Book a tour for few days and we shall work with you to craft one !</p>
-            </div>
-          </div>
+          </div> -->
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-    </section>
+    </header>
 
-  
-    <section class="p-0" id="portfolio">
-      <div class="container-fluid">
-        <div class="col-lg-12 text-center">
-            <h4 class="section-heading">Hiking Experiences !!</h4>
-            <hr class="primary">
-        </div>
-        <div class="row no-gutter popup-gallery">
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk6.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk6.jpg' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk7.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk7.jpg' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk8.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk8.jpg' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk9.jpg' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk9.jpg' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk10.JPG' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk10.JPG' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/hiking/hk11.JPG' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/hiking/hk11.JPG' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+    <br>
+
+   {% block section_1 %}
+   {% endblock %}
+
+   {% block section_2 %}
+   {% endblock %}
+
+   {% block section_3 %}
+   {% endblock %}
+
+   {% block section_4 %}
+   {% endblock %}
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
       </div>
- <!--    </section> -->
-
-    <br/>
-    <br/>
-  
-    <!-- <section class="p-0" id="culture"> -->
-      <div class="container-fluid">
-        <div class="col-lg-12 text-center">
-            <h4 class="section-heading">Being Bhutanese !!</h4>
-            <hr class="primary">
-        </div>
-        <div class="row no-gutter popup-gallery">
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb8.JPG' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb8.JPG' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb9.JPG' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb9.JPG' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb13.JPG' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb13.JPG' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb10.JPG' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb10.JPG' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb11.JPG' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb11.JPG' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                 <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <a class="portfolio-box" href="{% static 'ztour/img/portfolio/fullsize/beingbhutanese/bb15.JPG' %}">
-              <img class="img-fluid" src="{% static 'ztour/img/portfolio/thumbnails/beingbhutanese/bb15.JPG' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Click
-                  </div>
-                  <!-- <div class="project-name">
-                    Project Name
-                  </div> -->
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-
-    <div class="call-to-action bg-dark">
-      <div class="container text-center">
-        <!-- <h2>Experience the Tranquility of Nature</h2> -->
-        <a class="btn btn-default btn-sm sr-button" href="/contact">Drop Message !</a>
-
-      </div>
-    </div>
-
-    <!-- FB Page Plugin -->
-    <section id="travelinfo">
-    
-      <div class="row">
-        
-          <div class="col-lg-5" style="margin: 50px">
-            <div class="col-lg-6 mx-auto text-center">
-              <h4 class="section-heading">About Us</h4>
-              <hr class="primary">
-            </div>  
-              <p>We are Hemco Tours &amp; Trek, a Bhutan-based trip operator specializing in adventure sports, cultural tours trekking and sightseeing trips throughout Bhutan. We believe the true Himalayan adventure has to have two crucial elements – endurance and experience. Endurance is about you and your ability to show tenacity in the face of difficult physical challenges. Experience is about the landscape and the people, the Himalayan backdrop which offers some of the most stunning scenery in the world.
-              Wherever you travel with us we’ll take you to the major highlights as well as along the trade route taken by ancestors for you to discover the core of Bhutan. This gets you closer to the local people and the culture you came to discover. We promise to share our knowledge and expertise with you, and ensure you will come home with stories you will tell for years to come.
-              Think about getting your moment and experience in Bhutan. Should you have any questions regarding itineraries or a booked journey, do not fail to contact us. We’re here to listen and make it happen.</p>
-          </div>
-
-          <div class="col-lg-5" style="margin: 50px">
-            <div class="col-lg-6 mx-auto text-center">
-              <h4 class="section-heading">Why Us?</h4>
-              <hr class="primary">
-            </div>
-                <p>At Hemco Tours and Treks we’re for premium adventures, and for us that means embracing the spirit of adventure through a more immersive cultural journey. Hand-picked accommodation, small groups, well trained and experience local guides, added inclusions and a more considered pace. Premium means an exceptional experience, but never an artificial one.
-                Hemco Tours and Treks offers you several tour packages to choose from and they have been designed to be self-sufficient in delivering to you the Himalayan experience. The packages differ based on duration of the trip and activity level so that you can choose the best trip that suits you. However, we can also prepare a customised itinerary for you based on your own preference.
-                As soon as you land into Bhutan, you can let us to handle and manage your holiday till you get back. We deal with all the paperwork and the logistics so that you can focus on your adventure.
-                It’s your vacation and Hemco Tours and Treks will ensure that you get what you came for. So, why not?
-                </p>
-          </div>
-      
-      </div>
-    </section>
-    <section id="contact">
-      <div class="row">
-        <div class="col-lg-4 mx-auto text-center">   
-            <p>HEMCO TOURS and TREKS</p>
-            <p>Changangkha, Thimphu</p>
-            <p>P.O Box # 342</p>
-            <p>Phone: +975-02-327345 / +975-77200613</p>
-            <p><a href="mailto:your-email@your-domain.com">info@hemcotoursandtreks.com</a></p>
-            <p>
-              <a href="https://www.google.com/maps/place/HEMCO+Tours/@27.4777987,89.6292999,17z/data=!3m1!4b1!4m5!3m4!1s0x39e1941890f5f071:0x5775e1d5765532c1!8m2!3d27.4777987!4d89.6314886?hl=en-AU" target="_blank">On Google Map</a>
-            </p>
-        </div>
-
-        <div class="col-lg-8 mx-auto text-center">
-          <div class="fb-page" data-href="https://www.facebook.com/hemcoToursAndTreks/" data-tabs="timeline,events,messages" data-width="500" data-height="350" data-small-header="true" data-adapt-container-width="true"     data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/hemcoToursAndTreks/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/hemcoToursAndTreks/">HEMCO Tours and Treks</a></blockquote></div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Druk Path Modal -->
-    <div class="modal fade" id="modal-drukpath" role="dialog">
-      <div class="modal-dialog modal-lg">
-      
-        <!-- Druk Path Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">DRUK PATH TREK</h4>
-          </div>
-          <div class="modal-body">
-            <p style="font-size: small;">The six day trek is the most popular trek in the country as it passes through a gorgeous natural landscape of blue pine forests, high ridges and pristine lakes while at the same time offering the opportunity to visit some ancient lhakhangs, dzongs and villages.
-            The Druk Path Trek is also a fairly easy hike to undertake as the distances between rest camps is fairly short. The trail takes you through forests of fir, blue pine and dwarf rhododendrons at altitudes ranging between 2400-4200 m. On the third day hikers will arrive at Jimiling Lake, whose crystal clear waters are home to gigantic trout.
-            This trek also offers hikers stunning views of Mt. Gangkar Puensum, the highest unscaled peak in the world. The best times to embark on the Druk Path Trek are between March-June or September-November. </p>
-            <p style="font-size: small;">
-            <Strong> Day 1: Paro - Jili Dzong :   </Strong>
-
-            Distance 7 km, 4-5 hours, 1,090 m ascent, camp altitude 3,480 m.
-            The first day can be quite arduous as you have to climb more than 1,000m elevation. You start from the Ta Dzong (National Museum) in Paro. The trek follows a gravel road past a few farms for about 30 minutes and then climbs up a steep ridge before leading through blue pine and fir forests to Damche Gom. Once you reach the ridge below Jili Dzong you descend about 100m to the campsite below the Dzong.
-
-            </p>
-            <p style="font-size: small;">
-            <strong>Day 2: Jili Dzong – Jangchulakha</strong>
-
-            Distance 10 km, 4-5 hours, 310 m ascent, 50 m descent, camp altitude 3,770 m.
-            You begin with a steep climb for about an hour and a half, then the slope evens a bit and the ascent is more gradual. The trail takes you through thick alpine forests and dwarf rhododendron tress. You may see herders and their yaks around your campsite.
-            </p>
-            <p style="font-size: small;">
-            <strong>
-            Day 3: Jangchulakha – Jimgelang Tsho
-            </strong>
-            Distance 11 km, 4 hours, 230 m descent, 330 m ascent, camp altitude 3,870 m.
-            The trail follows a ridge and on a clear day the view of the mountains and valley are simply stunning. The campsite is close to the Jimgelang Tsho Lake. This lake is known for its giant sized trout
-            </p>
-            <p style="font-size: small;">
-            <strong>
-            Day 4: Jimgelang Tsho – Simkotra Tsho
-            </strong>
-            Distance 11 km, 4 hours, 820 m ascent, 400 m descent, camp altitude 4,110 m.
-            The trail takes you through dwarf rhododendron trees and past Janetso Lake. You may come across some yak herder camps where you will have the opportunity to get a glimpse of a nomad’s life. The campsite is close to Simkotra Tsho Lake.
-            </p>
-            <p style="font-size: small;">
-            <strong>Day 5: Simkotra Tsho – Phajoding</strong>
-            Distance 10 km, 3-4 hours, 130 m ascent, 680 m descent, camp altitude 3,750 m.
-            The day begins with a gradual climb. If the weather permits, you will have a spectacular view of Mount Gangkar Puensum, the highest mountain in Bhutan and several other Himalayan peaks. From this pass, the trek takes you downhill towards Phajodhing where you will halt for the night. The camp is located just above Phadjoding Monastery.
-          </p>
-          <p style="font-size: small;">
-          <strong>
-            Day 6: Phajodhing – Mothitang
-          </strong>
-            Distance 4-5 km, 3 hours, 1,130 m descent.
-            After passing Phadjoding monastery, the trek to Thimphu (Mothitang) is downhill through a forested area of mostly blue pine. The walk, at a leisurely pace, takes about three hours.
-          </p>
-          <p style="font-size: small;">
-          <strong>
-            Druk Path - Finish 
-          </strong>
-            The Druk Path finishes at the Bhutan Broadcast Service (BBS) Telecommunication Tower, offering great view of the city of Thimphu.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-
-  <!-- Druk Path Modal End -->
-
-  <!-- JOMOLHARI LAYA GASA TREK Modal -->
-    <div class="modal fade" id="modal-jomolharigasa" role="dialog">
-      <div class="modal-dialog modal-lg">
-      
-        <!-- JOMOLHARI LAYA GASA TREK Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">JOMOLHARI LAYA GASA TREK</h4>
-          </div>
-          <div class="modal-body">
-            <p style="font-size: small;">The Laya-Gasa Trek is considered one of the most scenic treks in Bhutan, offering amazing views of some of the most pristine and unspoiled landscapes in Bhutan. This fourteen day, 217 km journey begins at Drukgyel in Paro and takes you through gorgeous alpine meadows, high mountain passes and dense sub-tropical jungles before terminating in Damji in Tashithang.
-            The first five days of this trek follow the same route as the Jomolhari Trek I through Jigme Singye National Park and offer awe-inspiring views of Mt. Jomolhari, Jichu Drake and Tsherimgang. On the sixth day the path diverges and you will depart Lingshi for the camp site at Chebisa, a charming little village adorned with a beautiful waterfall of crystal clear water.
-            Along the trail you’ll be able to spot indigenous animals such as blue sheep and Takins, the national animal of Bhutan. You’ll travel through remote mountain villages inhabited by Layaps (people of Laya), a distinct segment of the Bhutanese society with unique culture, traditions and appearance. Thhe trek also offers a day of relaxation at the famous Gasa hot springs that is sure to rejuvenate you.
-            This is one of the more difficult treks offered in Bhutan due to the high altitudes and steep ascents and descents along the path. The best seasons to complete this challenge are in April-June and Mid-September-Mid-November
-             </p>
-            <p style="font-size: small;">
-            <Strong>Day 1: Gunitsawa Village – Sharna Zampa</Strong>
-
-              40mins, 80 m descent, camp altitude 2,850 m.<br>
-              This trek begins at Gunitsawa Village were you pass the army post. At the army checkpost your trek permit (provided by your tour operator) will be checked and endorsed. The campsite is on the opposite side of the river, not far from Gunitsawa.
-            </p>
-            <p style="font-size: small;">
-            <strong>Day 2: Sharna Zampa - Thangthangkha</strong>
-
-              Distance 22 km, 7-8 hours,  770 m ascent, 10 m descent, camp altitude 3,610 m.<br>
-              On this long day, the trail continues with lots of small ups and downs. After going uphill through the river valley the valley finally narrows gradually to a mere path which descends to a meadow where a camp will be set up. From here, if weather permits, you will have the first great view of Mt. Jomolhari.
-            </p>
-            <p style="font-size: small;">
-            <strong>
-            Day 3: Thangthangkha – Jangothang
-            </strong>
-              Distance 19 km, 5-6 hours, 480 m ascent, camp altitude 4,080 m.<br>
-              If you did not see Mt. Jomolhari the previous evening, you will still have a chance to get a great view early this morning. This morning the trek continues up the Paro Chhu valley which widens into patches of alpine meadow and scanty growths of forest. You will cross an army checkpoint along the way and enjoy a spectacular view of high mountain ridges and snow-capped peaks. In this area yaks and their herder’s homes become a regular feature of the landscape. Passing the villages Soe, Takethang and Dangochang is another asset on this day. After reaching Jangothang, one of the most beautiful campsites of the Himalayas, you will again have a spectacular view of Mount Jomolhari.
-
-            </p>
-            <p style="font-size: small;">
-            <strong>
-            Day 4:Jangothang Halt
-            </strong>
-            The rest day in Jangothang provides plenty of possibilities for day hikes with great views of lakes and snow capped mountains such as Jomolhari and Jichu Drake. There are good chances to spot some blue sheep on the upper slopes of the valley. Jangothang is a perfect environment for your acclimatization. You can also trek up to Tosoh or hike around the area. There are good short hiking trails in three directions. Jomolhari and its subsidiary mountain chains lie directly west, Jichu Drake to the north and there are a number of unclimbed peaks to the east.
-            </p>
-            <p style="font-size: small;">
-            <strong>Jangothang – Lingshi</strong>
-            Distance 18 km, 6-7 hours, 840 m ascent, 870 m descent, camp altitude 4,010 m.
-This is one of the longest days of the trek.  A short distance from the camp the trail begins climbing rapidly for about half an hour and then becomes a gradual ascent to the Nyilila pass at 4,870m. While on the climb enjoy the surroundings. You might see herds of blue sheep grazing on the slopes of the mountains. From the pass you will have spectacular views of Mt. Jomolhari, Jichu Drake and Tsherimgang, all of them rising above 7,000m. It's a gradual descent to the camp where you will pass by some of the yak herder’s tents, made from yak wool. The herders use these tents while travelling tovarious pastures for their yaks. As you come down into the Lingshi basin, a beautiful U-shaped valley, you get a wonderful view of Lingshi Dzong on clear days. Tserimgang and its glaciers rise up at the north end of the valley. The campsite is next to a stone hut you reach just before Lingshi Dzong.
-
-          </p>
-          <p style="font-size: small;">
-          <strong>
-            Day 6: Lingshi – Chebisa
-          </strong>
-            Distance 10 km, 5-6 hours, 280 m ascent, 410 m descent, camp altitude 3,880 m.
-Today is the shortest walking day, and you can really take it easy. Shortly after starting you will reach a chorten below Lingshi Dzong. Here, you have the choice of staying on the main trail or taking a detour up to the Lingshi Dzong (4,220m), which sits right atop a high ridge.  This Dzong is under reconstruction from a 2011 earthquake which damaged its central building. In addition to a very special atmosphere of mystic tranquility, Lingshi Dzong provides a great view over the valley. After Lingshi Dzong you will be passing the villages of Lingshi and Goyul. In Goyul, the stone houses are clustered together to form a small compact village that is unusual in Bhutan where settlements are usually scattered. On reaching the campsite at Chebisa you will have plenty of time to visit the village houses if you feel up to it. There is also a beautiful waterfall located behind the village that is worth visiting.
-
-          </p>
-          <p style="font-size: small;">
-          <strong>
-            Day 7: Chebisa – Shomuthang 
-          </strong>
-            Distance 17 km, 6-7 hours, 890 m ascent, 540 m descent, camp altitude 4,220 m.
-The morning starts with a long ascent behind Chebisa Village (2-3 hours) through a wide pastureland towards Gobu La (pass). On the way, you will see a few people herding yaks. There is also a great chance to spot large herds of blue sheep above the trail. After crossing Gobu La (4,410m), you descend into the valley, then climb again a little bit, before descending again to Shakshepasa (3,980), a large U-shaped valley. Climbing from here you will finally reach the campsite at Shomuthang, above a river, which is a tributary of the Nochu river.
-
-            </p>
-
-            <p style="font-size: small;">
-          <strong>
-            Day 8: Shomuthang – Robluthang
-          </strong>
-            Distance 18 km, 6-7 hours, 700 m ascent, 760 m descent, camp altitude 4,160 m.
-You begin by climbing up the valley to view Kang Bum (6,526 m) and some edelweiss. After two hours of climbing you will reach Jhari La (4,750m), from where you catch the first glimpse of Sinche La, the pass you will have to cross the day after. The big snow peak in the north is Gangchhenta 6,840 m, better known as the Great Tiger Mountain. If weather is clear, Tserim Kang and the top of Jomolhari will be visible. The camp by the river is called Tsheri Jathang located in a beautiful wide and remote valley. Herds of takin, the Bhutanese National Animal, migrate to this valley in summer and remain for about four months. The valley has been declared a takin sanctuary. Climb up a little bit and you will reach the campsite at Robluthang in a rocky meadow.
-
-
-          </p>
-
-          <p style="font-size: small;">
-          <strong>
-            Day 9: Robluthang – Limithang
-          </strong>
-           Distance 19 km, 6-7 hours, 850 m ascent, 870 m descent, camp altitude 4,140 m.
-The trek starts out with an initial 40-60mins ascent before gradually raising for another 1.5 hours through a boulder field.  It is then a 1 hour steep ascent before reaching Sinche La (5,005m) – the final and highest pass on the trek if you don’t intend to continue the Snowman trek from Laya onwards.  As you descend the far side of the passyou will see an impressive terminal moraine and a glacial lake at the foot of the valley. You can see classic examples of lateral moraines where the glacier has pushed rocks up both sides of the valley. Below the moraine, you cross the Kango Chhu and soon reach the Limithang campsite. The peak of Gangchhenta towers over the campsite even though it’s quite a distance away.
-
-
-          </p>
-
-          <p style="font-size: small;">
-          <strong>
-            Day 11: Rest / Acclimatization day in Laya
-          </strong>
-            If you have trekked from Paro Valley you should spend a day recuperating from the trek to Laya and preparing yourself for the rest of this challenging but spectacular trek. If you have started from Gasa (Punakha) you should also walk up to Laya to acclimatize, and not just stay at the trail junction to Lunana. It’s worthwhile to spend one day in Laya just for the great views from Laya and its extroadinary inhabitants
-
-          </p>
-
-
-          <p style="font-size: small;">
-          <strong>
-            Day 12: Laya – Rhoduphu
-          </strong>
-            Distance 19km, six to eight hours, 1,030m ascent, 750m descent, camp altitude 4,160m.
-From Laya we descend to an army camp and continue following the river till the turn off point to Rhoduphu. After lunch the climb continues through rhododendron bushes till you reach the camp at Roduphu just next to the Rhodu Chhu.
-          </p>
-
-          <p style="font-size: small;">
-          <strong>
-           Day 13: Rhodophu – Narethang
-          </strong>
-           Distance 17km, five to six hours, 740m ascent, camp altitude 4,900m.  
-After following the river for about half an hour you will have a steady climb to a high open valley at 4,600m and then further up to Tsomo La (4,900m). Tsomo La offers a superb view of Lunana, Mount Jomolhari and Jichu Drake, and the Tibetan border. The route then crosses a flat, barren plateau at about 5,000m. The campsite at Narethang is towered by the peak of Gangla Karchung (6,395m).
-s
-
-          </p>
-
-          <p style="font-size: small;">
-          <strong>
-            Day 14: Narethang – Tarina
-          </strong>
-            Distance 18km, five to six hours, 270m ascent, 1,200m descent, camp altitude 3,970m.  
-From the camp you will climb for about an hour to Gangla Karchung La (5,120m). The view from the pass is breathtaking and the whole range of mountains including Jekangphu Gang (7,100m), Tsenda Kang and Teri Gang (7,300m) can be seen. The pass descends along a large moraine. Again one has great views: a massive glacier descends from Teri Kang to a deep turquoise lake at its foot. Up here a glacial lake burst through its dam in the early 1960s, causing widespread damage and partially destroying Punakha Dzong. Finally, it is a very long descent through thick rhododendron to Tarina valley, where you will find several good campsites along the Tang Chhu.
-
-
-          </p>
-
-          <p style="font-size: small;">
-          <strong>
-            Day 15: Tarina – Woche
-          </strong>
-            Distance 17km, six to seven hours, 270m ascent, 330m descent, camp altitude 3,910m.  
-The walk leads down through conifer forests following the upper ridges of the Pho Chhu, passing some impressive waterfalls. The trail then climbs over a ridge and drops to Woche, a settlement of a few houses, the first village in the Lunana region
-
-
-          </p>
-            <p style="font-size: small;">
-          <strong>
-            Day 16: Woche - Lhedi
-          </strong>
-            Distance 17km, six to seven hours, 980m ascent, 1,190m descent, camp altitude 3,700m.  
-The trek starts through juniper and fir forests, and further ahead, through rhododendron bushes. Climb up to Keche La pass (4,650m) where one can have the great view of surrounding mountains again. After the pass, descend to the riverside walking through a village with a stunning view of Table Mountain and others. Follow up the river till Lhedi Village. Lhedi has a basic health unit, a school and a wireless telephone connection.
-
-
-
-          </p>
-
-          <p style="font-size: small;">
-          <strong>
-            Day 15: Tarina – Woche
-          </strong>
-            Distance 17km, six to seven hours, 270m ascent, 330m descent, camp altitude 3,910m.  
-The walk leads down through conifer forests following the upper ridges of the Pho Chhu, passing some impressive waterfalls. The trail then climbs over a ridge and drops to Woche, a settlement of a few houses, the first village in the Lunana region
-
-
-          </p>
-
-            <p style="font-size: small;">
-          <strong>
-            Day 17: Lhedi - Thanza
-          </strong>
-            Distance 17km, seven to eight hours, 450m ascent, camp altitude 4,150m.  
-In clear weather, you will have great views of Table Mountain (7,100m).  Around lunchtime you will pass the small village of Chozo (4,090m) which has a dzong still in use. Reaching Thanza again you will have a great view of Table Mountain which forms a 3,000m high wall of snow and ice behind the village. Although there are possibilities to camp directly at Thanza, most groups prefer to camp in Thoencha.
-
-
-
-          </p>
-
-          <p style="font-size: small;">
-          <strong>
-            Day 19: Thanza – Danji
-          </strong>
-            Distance 8km, three to four hours, 80m ascent, camp altitude 4,230m.  
-From Thoencha, the trail climbs up to a large boulder from where you will have excellent views of Thanza, Toencha and Choso village and the surrounding mountains. After a few hours of relatively flat and easy walking, you will reach a yak meadow with some yak herders’ huts. An excellent campsite with a great chance to spot some blue sheep on the hills above. A trail junction near the campsite will give you the choice between the route up to Gangkhar Puensum base camp, and further on to Bumthang or to Sephu (Trongsa). Both routes are described in this website.
-
-
-
-          </p>
-
-            <p style="font-size: small;">
-          <strong>
-            Day 20: Danji – Tshochena
-          </strong>
-            Distance 12km, five to six hours, 980m ascent, 240m descent, camp altitude 4,970m.  
-Having chosen the route to Sephu, the trek crosses the creek and after a long climb, you will reach Jaze La (5,150m) with spectacular panoramic mountain views . The path then descends between snow covered peaks and a couple of small lakes to the campsite near the shore of Tshochena lake.
-
-
-
-          </p>
-
-          <p style="font-size: small;">
-          <strong>
-            Day 21: Tshochena – Jichu Dramo
-          </strong>
-            Distance 14km, four to five hours, 230m ascent, 150m descent, camp altitude 5,050m.
-You follow the bank of the blue green lake before arriving at a ridge at 5,100m, where there is another spectacular view in all directions. After going up and down over small hills to reach a glacial lake, the route descends first before climbing again up the next pass, the Loju La (5,140m). Finally after crossing a small saddle (5,100m) you will enter a wide glacial valley from where the trail descends gradually to the campsite at Jichu Dramo.
-
-
-
-          </p>
-
-            <p style="font-size: small;">
-          <strong>
-           Day 22: Jichu Dramo – Chukarpo
-          </strong>
-            Distance 18km, five to six hours, 320m ascent, 730m descent, camp altitude 4,600m.  
-
-Right after leaving the camp you will climb through a moraine to Rinchen Zoe La (5,320m). Spectacular mountain scenery with Gangkhar Puensum amongst the impressive mountains is the reward for climbing the highest pass on this trek route. Rinchen Zoe Peak (5,650) towers above the pass the west. Descending from the pass, the route leads into a wide valley with several lakes and goes steeply down along a moraine to the Thamphe Chhu. Here the vegetation begins to thicken again and you will see the first real trees since Lhedi. After a couple of hours you reach the campsite at Chukarpo
-
-
-
-          </p>
-
-          <p style="font-size: small;">
-          <strong>
-            Day 23: Chukarpo – Thampe Tsho
-          </strong>
-            Distance 18km, five to six hours, 400m ascent, 700m descent, camp altitude 4,300m.  
-The descent continues along the river till you reach the yak herder huts at Gala Pang Chhu (4010m). From here the trail climbs steeply towards Thampe Tsho, a beautiful clear turquoise lake, with the campsite next to it.
-
-
-          </p>
-
-            <p style="font-size: small;">
-          <strong>
-            Day 24: Thampe Tsho – Maurothang
-          </strong>
-            Distance 14km, five hours, 330m ascent, 1020m descent, camp altitude 3,610m.  
-From the lake you climb steeply to the last pass on your trek, the Thampe La (4,600m) with a good chance to spot some blue sheep on the way. Then the path descends to the sacred lake Om Thso. Passing a waterfall you will reach another, smaller lake 100m below to descend steeply to the Nikka Chhu. The path finally leads through mixed forest to large clearing on the banks of the river with a few yak herder huts, Maurothang.
-
-
-
-          </p>
-
-          <p style="font-size: small;">
-          <strong>
-            Day 25: Maurothang – Sephu
-          </strong>
-            Distance 18km, five to six hours, 990m descent.  
-On the last day of this extraordinary trek your porters will have to change from yaks to horses as the yaks will not be willing to go further down. The path follows the Nikka Chhu to reach a large grassy area overlooking the road and the village of Sephu. You finally reach the road at the Nikka Chhu bridge at Sephu where you will find several stores (mainly selling bamboo products) and small restaurants  
---  FINISH --
-
-
-
-          </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-
-  <!-- JOMOLHARI LAYA GASA TREK Modal End -->
-
-  <!-- SNOWMAN TREK II Modal -->
-    <div class="modal fade" id="modal-snowmanII" role="dialog">
-      <div class="modal-dialog modal-lg">
-      
-        <!-- SNOWMAN TREK II Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">SNOWMAN TREK II</h4>
-          </div>
-          <div class="modal-body">
-            <p style="font-size: small;">The Snowman Trek is an extension of the beautiful Laya Gasa Trek, and leads from Laya into high altitudes of the Bhutanese Himalayas. It takes tough and enduring trekkers into the Lunana region and further on to Gangkhar Puensum and Bumthang or down to Sephu in Trongsa district, depending on which route you choose. The Snowman trek leads through the most remote areas up to very high altitudes.
-            Trekkers have to camp in altitudes above 5,000m more than once, and depending on the seasonal temperatures, the camps are sometimes on snow.
-            The Lonely Planet describes the Snowman Trek as one of the most difficult treks of the world. The best time for Snowman Trek is summer – unlike many other high altitude treks of Bhutan.  Many groups that attempt this tough trek do not finish due to problems with the high altitude or snow blocked passes.  However, those who make it will remember this trek as an outstanding, beautiful and as one of the most rewarding trek of their life.  In this version of the Snowman Trek, one has the possibility of spending a day or two at perhaps one of the most beautiful hot springs of the Himalayas.</br>
-            </p>
-            <p style="font-size: small;">
-            <Strong> Duration: 25 days, Max. Elevation: 5,320m</Strong>
-            </p>
-            <p style="font-size: small;">
-            <strong>Highest Camp: 5,120m</strong>
-            </p>
-            <p style="font-size: small;">
-            <strong>
-            Standard: Hard
-            </strong>
-            </p>
-            <p style="font-size: small;">
-            <strong>
-            Best Seasons: Mid June to Mid October
-            </strong>
-            </p>
-            <p style="font-size: small;">
-            <strong>Start: Gunitsawa Village, Paro Valley</strong>
-            </p>
-            <p style="font-size: small;">
-            <strong>
-             Finish: Duer Village, Bumthang
-            </strong>
-            </p>
-         
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-
-  <!--SNOWMAN TREK II Modal End -->
-
-  <!-- NABJI KORPHU TREK Modal -->
-    <div class="modal fade" id="modal-nabjikorphu" role="dialog">
-      <div class="modal-dialog modal-lg">
-      
-        <!-- NABJI KORPHU TREK Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">NABJI KORPHU TREK</h4>
-          </div>
-          <div class="modal-body">
-            <p style="font-size: small;">This one week trek offers a short, easy and enjoyable journey around scenic Trongsa Dzongkhag. The climate is warm and pleasant as the trail stays between 1000-1500m in altitude and there is a wide array of flora and fauna observable along the route including the rare Golden Langur, Red Pandas, Himalayan Black Bears, Rhesus Monkeys, Rufous-necked Hornbills and Clouded Leopards.<br><br>
-            Hikers on this trek will have plenty of opportunity to experience traditional rural life as they will spend nights in the villages of Nabji, Korphu and Nyimshong. Nabji is an idyllic village surrounded by verdant paddy fields and the villagers of Korphu are famed for their hospitality. Visitors will often be greeted by a Chipdrel procession and Marchang ceremony, practices typically reserved for royalty. Nyimshong is a good place to observe some of the local culture as the women often put together cultural shows full of singing and dancing for visitors.
-            This is the perfect trek for visitors looking to learn about and experience traditional rural life firsthand while enjoying the natural beauty and biodiversity of Bhutan. The best time to embark on this trek is in winter, between October-April.
-            .</br>
-            </p>
-            
-         
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-
-  <!--NABJI KORPHU Modal End -->
-
-  
-
-  <!-- MERAK SAKTENG TREK TREK Modal -->
-    <div class="modal fade" id="modal-meraksakteng" role="dialog">
-      <div class="modal-dialog modal-lg">
-      
-        <!-- MERAK SAKTENG TREK Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">MERAK SAKTENG TREK</h4>
-          </div>
-          <div class="modal-body">
-            <p style="font-size: small;">Merak-Sakteng stands out as a distinct attraction in Bhutan. Unlike anywhere else in the country, it offers a visitor to experience a unique semi-nomadic lifestyle, culture and vernacular in one of the most scenic pastoral valleys in the protected area of Sakteng Wildlife Sanctuary (SWS) in Trashigang Dzongkhag (District), in Eastern Bhutan.
-            It is a moderate trek (between 1,500m and 4,100m) traversing through the semi-nomadic villages of Gengu (3400m), Merak (3500m), Sakteng (2800m), Thakthi (2200m), and Joenkhar (1700m). Tour operators are not mandated to use a particular trail but the most common trail usually begins from Chaling and ends in Phongmey. Both these Geogs of Merak and Sakteng are an important watershed for Ngere Ama chu and Gamri chu rivers respectively.
-            </br>
-            </br> 
-            The campsites have been designed aesthetically to blend with local architecture and ambiance. Enclosed by a stonewall (with a gate to bring in the ponies to unpack trekking paraphernalia), the campsite is equipped with facilities such as tenting sheds, toilets, kitchens (in some), dining area and water supply. A signage describing the location, altitude, forest type, fauna, additional hiking trails in the locality, distance and time to next camp welcomes a visitor to each campsite.</br>
-            </p>
-            
-         
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-
-  <!-- Adventure Modal End -->
-
-
-  <!-- Adventure Modal -->
-    <div class="modal fade" id="modal-adventure" role="dialog">
-      <div class="modal-dialog modal-lg">
-      
-        <!-- Adventure Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-            <h4 class="modal-title" style="margin: 0 auto;">ADVENTURE</h4>
-          </div>
-          <div class="modal-body">
-            <p style="font-size: small;">Bhutan is swiftly developing its reputation as a premier destination for adventure sports. Set amongst the majestic Himalayas our kingdom is the perfect location for all manner of exciting activities including Hiking, Trekking, Kayaking, Mountain Biking and Fishing.
-            Whether it’s rafting down crystal clear, glacier-fed rivers or trekking through lush, virgin forests Bhutan offers a one-of-a-kind experience for travelers seeking adventure in an unspoiled and unexplored environment.
-            All the necessary arrangements for adventure activities can be made through your local tour operator. They will provide you with well-trained and experienced guides to ensure your safety at all times.
-            </br>
-            </p>
-
-            <p style="font-size: small;">
-            <Strong>1. CYCLING : </Strong>
-              The rugged, mountainous landscape of Bhutan lends itself well to both on-road or off-road mountain biking and the sport is seeing increasing popularity among both visitors and Bhutanese alike.
-              The rugged, mountainous landscape of Bhutan lends itself well to both on-road or off-road mountain biking and the sport is seeing increasing popularity among both visitors and Bhutanese alike. There are a variety of biking routes available ranging from smooth journeys on paved roads to challenging off-road dirt trails that wind through rough terrain. The sport offers a certain intimacy with the environment that is seldom experienced in vehicles. With better roads replacing the old and the increasing number of off-road roads, biking is now becoming a very unique and original way of seeing and interacting with the country, people and the Bhutanese environment.
-              Most biking trips go through well paved roads while others trail on to dirt roads and trails. Traffic is still relatively very light and the experience very intimate. The more adventurous have the option of making side excursions for more “off-the-road” ventures if prefer. The trails accommodate most types of frames: including MTB, Hybrid, and Road, depending on your cycling style and experience. Biking trails mostly meander through small towns and villages and rural areas; it’s just you, your bike, the tour group and the agrarian and natural scenery.
-              There are also numerous opportunities for optional hikes with a bit of climbing thrown in. There are some challenging climbs with one in particular that is more than seven hours. You peddle the pads over two miles (3,400 meters) above sea level. Your effort is rewarded with a breathtaking view and an unforgettable experience. Riders should have an adequate level of fitness and stamina and be experienced enough in the art of mountain biking. Tours are fully supported by a van following riders. The van allows riders to rest should they require it. Many of the biking trails lead through small villages and temples which can provide interesting and informative diversions should you wish to take a break.
-
-            </p>
-            <p style="font-size: small;">
-            <strong>2. KAYAKING AND RAFTING : </strong>
-              The crystal clear rivers of Bhutan are one of the kingdom’s best kept open secrets. Fed by the glacial-melt of the Eastern Himalayas, six major rivers (Wang Chhu, Sunkosh, Puna Tsang Chhu, Mangde Chhu, Kuri Chhu and Dangme Chhu and their tributaries), have been scouted for kayaking and rafting.
-              They cut through high valleys and low plains to meet up with the Brahmaputra River in India. The pristine natural setting and the sheer variety of the rivers’ courses provides a unique opportunity to explore Bhutan’s beautiful wilderness. Adventurous travelers will not be disappointed by the rugged, untamed waterways of Bhutan.  The rivers are plentiful with strong currents varying between slow, gentle flows in some places and powerful, raging torrents can be found throughout the country. Although adventure sports and tourism are relatively recent introductions to Bhutan, they are rapidly gaining in popularity.
-              The river courses available in Bhutan offer something for all visitors, regardless of experience: There are easy routes for beginners and hair-raising runs for the veterans. Besides the rafts and the kayaks, Bhutanese agents also organize walking and trekking expeditions along the scenic river banks. The best time for rafting and kayaking is from March to April and November to December. <br></br>
-
-              <strong>Safety : </strong>
-                Bhutanese rafting and kayaking guides are well trained and will do everything to ensure that you enjoy the adventure while minimizing the risks. The rivers of Bhutan were first surveyed for potential routes for water sports in 1997 by Gerry Mofatt and Peter Knowles, both experienced rafters/kayakers at the invitation of the Royal Government and the Department of Tourism.
-                They trained the first batch of Bhutanese river-guides and conducted surveys to grade the rivers. Since then, other rivers have been surveyed including the Punatsang Chhu, Manas and Amo Chhu. TCB guidelines ensure that all operators use well maintained professional equipment and maintain a reasonable guide-client ratio.
-
-            </p>
-
-            <p style="font-size: small;">
-              <strong>KAYAKING AND RAFTING ROUTES : </strong><br>
-              <strong>Paro Chhu (Bondey – Isuna Bridge)</strong><br>
-
-                Location: Paro Valley, Western Bhutan<br>
-                Length: Approximately 10 km (3 hours)<br>
-                Difficulty: Class III-IV<br>
-                Flow: About 500 cfs<br>
-                Season: March – April<br>
-                Craft: Kayaks recommended due to narrow and steep rapids<br>
-              <br>
-
-              <strong>Upper Pho Chhu (Wangthangkha – Samdingkha) </strong><br>
-                Location: Punakha Valley, Western Bhutan<br>
-                Length: Approximately 7 km (2 hours)<br>
-                Difficulty: Class III-IV<br>
-                Flow: 2000 -3000 cfs<br>
-                Season: March – April, October – November<br>
-                Craft: Kayaks and Rafts<br><br>
-            
-              <strong>Mo Chhu – Tashitang Devil’s Gorge Section (Tashithang- Below Punakha Dzong)</strong><br>
-
-                Location: Punakha Valley, Western Bhutan<br>
-                Length: 12 km, 5 -7 hours with scouting<br>
-                Difficulty: Class V<br>
-                Flow: 1000 cfs<br>
-                Season: February/December.<br>
-                Craft: Kayaks only (too steep for rafts)<br>
-                (Caution: Higher than medium flows makes this run dangerous. High water runs are not recommended for amateurs)<br>
-              
-              <br>
-
-              <strong>Mangde Chhu – Upper Section (Yundo Choling Palace- Langthel)</strong><br>
-                Location: Trongsa, Central Bhutan<br>
-                Length: Approximately 5 km (2 hours with scouting)<br>
-                Difficulty: Class IV<br>
-                Flows: Approximately 3000 cfs<br>
-                Season: March – April, November – December<br>
-                Craft: Kayaks<br>
-                <br>
-            
-            </p>
-
-            <p style="font-size: small;">
-            <Strong>3. BIRD WATCHING : </Strong><br>
-              Bhutan is a paradise for bird lovers and ornithologists. Over 670 species of birds have been recorded and many more are yet to be discovered. Around 50 species of the known birds are winter migrants. These include ducks, waders, birds of prey, thrushes, finches and buntings.<br>
-              The partial migrants to Bhutan include cuckoos, swifts, bee-eaters, warblers and flycatchers. The country harbors more than 16 species of vulnerable birds. They are the Pallas’s Fish Eagle, White bellied Heron, Satyr Tragopan, Gray-bellied Tragopan, Ward’s Trogon, Blyth’s King Fisher, Yellow-rumped Honey Guide, Rufous Throated Wren Babbler, Chestnut-breasted Partridge, Blyth’s Trogon, Wood Snipe, Dark-rumped Swift, Rufous-necked Hornbill, Gray-crowned Prinia and the Beautiful Nuthatch all of which breed in Bhutan.<br>
-              Bhutan is home to many species of birds that are in danger of extinction, including the Imperial Heron, which is one of the fifty rarest birds in the world and the rare Black-Necked Crane, which breeds in Tibet and then migrates over the Himalayas to Bhutan during the winter months. The Cranes can be spotted in Phobjikha Valley in Western Bhutan, Bumthang in Central Bhutan and in Bomdeling in Eastern Bhutan. They migrate to these winter roosting sites in the months of September and October and fly back to Tibet between February and March.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-
-  <!--Adventure  Modal End -->
+      <!-- /.container -->
+    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="{% static 'ztour/vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'ztour/vendor/popper/popper.min.js' %}"></script>
-    <script src="{% static 'ztour/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="{% static 'ztour/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-    <script src="{% static 'ztour/vendor/scrollreveal/scrollreveal.min.js' %}"></script>
-    <script src="{% static 'ztour/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
-
-    <!--{% static 'ztour/ Custom scripts for this te' %}mplate -->
-    <script src="{% static 'ztour/js/creative.min.js' %}"></script>
-
-    <script src="{% static 'ztour/js/carousel.js' %}"></script>
+    <script src="{% static 'ztour/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
   </body>
 

@@ -2,6 +2,7 @@ from django import forms
 from django.forms import SelectDateWidget
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import Tour, Guest
 
 
 class SignUpForm(UserCreationForm):
@@ -36,3 +37,8 @@ class ContactForm(forms.Form):
         message = cleaned_data.get('message')
         if not name and not email and not message:
             raise forms.ValidationError('You have to write something!')
+
+class TourEditForm(forms.ModelForm):
+    class Meta:
+        model = Tour
+        fields = ('dateOfArrival', 'duration')
