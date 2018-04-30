@@ -96,9 +96,18 @@ p {font-size:12px; font-family: 'pt serif'; line-height:1.5;margin-bottom:5px}
   background-size: cover;
 }
 
+.carousel-inner .carousel-item {
+  transition: -webkit-transform 2s ease;
+  transition: transform 2s ease;
+  transition: transform 2s ease, -webkit-transform 2s ease;
+}
+
 .portfolio-item {
   margin-bottom: 30px;
 }
 
 .section{padding:35px 0}
 .section-heading{margin-top:0}
+
+
+

@@ -3,7 +3,7 @@
 
 {% block section_1 %}
 
-	<section id="services">
+<section id="services">
       <div class="container">
         
 
@@ -23,40 +23,23 @@
                     </form>
                   </div>
               </div>
-             <!-- inquiry form End -->
         	</div>
+        	<!-- inquiry form End -->
 
 	          <div class="col-lg-8">
 	            <div class="col-lg-12 mx-auto text-center">
-	                <h4 class="section-heading">Our Packages</h4>
+	                <h4 class="section-heading">Collection of Our Experiences</h4>
 	                <hr class="primary">
 	            </div>
 
 	            <div class="row">     
 	              {% for post in all_posts %}  
 	             <!-- Example Social Card-->
-	              <div class="col-lg-6 card"  style="margin-bottom: 5px;">
+	              <div class="col-lg-4 card "  style="margin-bottom: 5px;">
 	                <div class="row">
-	                  <div class="col-lg-6 bg-dark-green" style="padding: 0px;">
-	                      <a href="#">
-	                        <img class="card-img-top img-fluid w-100" style="max-height: 190px" alt="" src="/media/{{ post.thumb_nail.document }}">
-	                      </a>
+	                  <div class="col-lg-4 bg-dark-green" style="padding: 0px;">
+	                      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" /></a>
 	                  </div>
-	                  <div class="col-lg-6 bg-dark-green">    
-	                      <div class="card-body">
-	                        <h6 class="card-title mb-1"><a href="#">{{ post.title }}</a></h6>
-	                        <p class="card-text small">{{ post.short_desc }}</p>
-	                      </div>
-	                      <div class="card-body py-2 small">
-	                        <a class="mr-3 d-inline-block" href="/packagedetail/{{ post.id }}">
-	                          <i class="fa fa-fw fa-thumbs-up"></i>Details</a>
-	                         <!-- <a class="mr-3 d-inline-block" href="#">
-	                          <i class="fa fa-fw fa-comment"></i>Comment</a> -->
-	                        <!-- <a class="d-inline-block" href="#">
-	                          <i class="fa fa-fw fa-share"></i>Share</a> -->
-	                      </div>
-	                  </div> 
-	                      <!-- <div class="col-lg-12 card-footer small text-muted" >Posted yesterday</div> -->
 	                </div>      
 	              </div>
 
