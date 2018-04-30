@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.utils.translation import ugettext_lazy as _
 
-from ztour.views import HomeView, ContactView, ListPackageView, BookView, MessagesubmittedView, PackageDetailView
+from ztour.views import HomeView, ContactView, ListPackageView, BookView, MessagesubmittedView, PackageDetailView, GalleryView
 from userhandler.views import signup
 
 
@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^signup/$', signup, name='signup'),
     url(r'^listpackage', ListPackageView.as_view()),
+    url(r'^gallery', GalleryView.as_view()),
     url(r'^packagedetail/(?P<pk>\d+)/$', PackageDetailView.as_view(),
         name='packagedetail-view',),
     url(r'^book', BookView.as_view()),
