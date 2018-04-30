@@ -26,7 +26,7 @@ SECRET_KEY = 's7itw%ca#*_w3-4cqnhyn@1ur-!%0em)i7#y$0%rhsb^av4x+gkn8s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["128.199.103.26", "tributetours.com", "http://tributetours.com", "www.tributetours.com"]
 
 # ALLOWED_HOSTS = ["128.199.103.26", "http://hemcotoursandtreks.com",
 #                  "www.hemcotoursandtreks.com", "hemcotoursandtreks.com"]
