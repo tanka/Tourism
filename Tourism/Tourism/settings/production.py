@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(
 SECRET_KEY = 's7itw%ca#*_w3-4cqnhyn@1ur-!%0em)i7#y$0%rhsb^av4x+gkn8s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["128.199.103.26", "tributetoursandtreks.com",
                  "http://tributetoursandtreks.com", "www.tributetoursandtreks.com"]
@@ -137,9 +137,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATICFILES_FINDERS = (
-     'django.contrib.staticfiles.finders.FileSystemFinder',
-     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 STATIC_URL = '/static/'
