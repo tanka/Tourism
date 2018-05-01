@@ -5,6 +5,7 @@ from django.views.generic import DetailView
 from .forms import ContactForm, QuickForm
 from .models import Header, Post, Gallery
 from tinymce.models import HTMLField
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -35,14 +36,15 @@ class HomeView(View):
             contact = contact_form.save()
             # email = str(form.getValue('email'))
             context = {'email': contact_form.cleaned_data.get('email'),
-                       'name': contact_form.cleaned_data.get('name')}
-            return render(request, 'message_submitted.html', context)
+                       'name': contact_form.cleaned_data.get('name'),
+                       'message': contact_form.cleaned_data.get('message'),
+                       'contact_number': contact_form.cleaned_data.get('contact_number'),
+                       }
 
-        elif quick_contact_form.is_valid():
-            contact = quick_contact_form.save()
-            # email = str(form.getValue('email'))
-            context = {'email': quick_contact_form.cleaned_data.get('email'),
-                       'name': quick_contact_form.cleaned_data.get('name')}
+            # Send mail function
+            send_mail('subject', context['message'] + "  " + context['name'] + " " + context['contact_number'] + " " + context['email'],
+                      'info@mg.tributetoursandtreks.com', ['drukdial@gmail.com'])
+
             return render(request, 'message_submitted.html', context)
 
         else:
@@ -131,7 +133,7 @@ class GalleryView(View):
             'contact_form': contact_form,
             'quick_contact': quick_contact,
             'all_posts': all_posts,
-            'all_gallery_pics': all_gallery_pics,   
+            'all_gallery_pics': all_gallery_pics,
         }
         return render(request, "gallery.html", context)
 
