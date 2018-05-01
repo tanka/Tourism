@@ -97,3 +97,26 @@ class Portfolio(models.Model):
 
     def __str__(self):
         return self.short_desc
+
+
+class Gallery(models.Model):
+    #  user = models.ForeignKey('auth.User')
+    image = models.ForeignKey(Image, null=True)
+    thumb_nail = models.ForeignKey(SmallImage, null=True)
+    title = models.CharField(max_length=200)
+    short_desc = models.CharField(max_length=255, blank=True)
+    activate = models.BooleanField(default=False)
+    position = models.CharField(max_length=5, null=True)
+
+    published_date = models.DateTimeField(
+        blank=True, null=True)
+    creation_date = models.DateTimeField(
+        default=timezone.now)
+
+    def publish(self):  # publish yerine yayinla idi tr tutorial da
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title + " -> is active : " + str(self.activate) + " -> at position : " + str(self.position)
+

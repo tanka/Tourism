@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Image, SmallImage, Portfolio, Post, Header
+from .models import Contact, Image, SmallImage, Portfolio, Post, Header, Gallery
 # Register your models here.
 
 
@@ -10,3 +10,4 @@ admin.site.register(SmallImage)
 admin.site.register(Portfolio)
 admin.site.register(Post)
 admin.site.register(Header)
+admin.site.register(Gallery)

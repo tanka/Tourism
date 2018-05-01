@@ -33,45 +33,16 @@
 	            </div>
 
 	            <div class="row">     
-	              {% for post in all_posts %}  
-	             <!-- Example Social Card-->
-	              <div class="col-lg-4 card "  style="margin-bottom: 5px;">
+	              {% for pic in all_gallery_pics %}  
+	            <!-- Example Social Card-->
+	              <div class="col-lg-4 card "  style="margin-bottom: 2px;">
 	                <div class="row">
-	                  <div class="col-lg-4 bg-dark-green" style="padding: 0px;">
-	                      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" /></a>
+	                  <div class="col-lg-4" style="padding: 0px;">
+	                      <a class="example-image-link" href="/media/{{ pic.image.document }}" data-lightbox="example-1"><img class="example-image" src="/media/{{ pic.thumb_nail.document }}" alt="image-1" /></a>
 	                  </div>
 	                </div>      
 	              </div>
-
-	              <!-- End of Social card -->
-
-	              <!-- Druk Path Modal -->
-	              <div class="modal fade" id="modal-drukpath" role="dialog">
-	                <div class="modal-dialog modal-lg">
-	                
-	                  <!-- Druk Path Modal content-->
-	                  <div class="modal-content  bg-dark-maroon">
-	                    <div class="modal-header">
-	                      <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-	                      <h4 class="modal-title">DRUK PATH TREK</h4>
-	                    </div>
-	                    <div class="modal-body">
-	                      <img class="img-fluid" src="/media/{{ post.image.document }}" alt="">
-	                      
-	                      <p style="font-size: small;">{{ post.content }}</p>
-	                      
-	                    </div>
-	                    <div class="modal-footer">
-	                      <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
-	                    </div>
-	                  </div>
-	                  
-	                </div>
-	              </div>
-
-	    <!-- End of Modal -->
-
-
+	            <!-- End of Social card -->
 
 	              {% endfor %}
 	            </div>

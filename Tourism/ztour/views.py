@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import DetailView
 from .forms import ContactForm, QuickForm
-from .models import Header, Post
+from .models import Header, Post, Gallery
 from tinymce.models import HTMLField
 
 # Create your views here.
@@ -49,6 +49,7 @@ class HomeView(View):
             form = ContactForm()
             return render(request, 'contact.html', {'form': form})
 
+
 class ContactView(View):
     def get(self, request, *args, **kwargs):
 
@@ -84,11 +85,10 @@ class PackageDetailView(DetailView):
         quick_contact = QuickForm()
         all_header = Header.objects.filter(activate=True)
 
-
-        context['all_header']  = all_header
+        context['all_header'] = all_header
         context['contact_form'] = contact_form
         context['quick_contact'] = quick_contact
-        
+
         return context
 
     def post(self, request, *args, **kwargs):
@@ -120,6 +120,7 @@ class GalleryView(View):
         contact_form = ContactForm()
         quick_contact = QuickForm()
         all_header = Header.objects.all()
+        all_gallery_pics = Gallery.objects.all()
 
         # Posts
 
@@ -130,6 +131,7 @@ class GalleryView(View):
             'contact_form': contact_form,
             'quick_contact': quick_contact,
             'all_posts': all_posts,
+            'all_gallery_pics': all_gallery_pics,   
         }
         return render(request, "gallery.html", context)
 
@@ -196,6 +198,7 @@ class ListPackageView(View):
         else:
             form = ContactForm()
             return render(request, 'contact.html', {'form': form})
+
 
 class BookView(View):
     def get(self, request, *args, **kwargs):

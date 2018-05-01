@@ -26,7 +26,8 @@ SECRET_KEY = 's7itw%ca#*_w3-4cqnhyn@1ur-!%0em)i7#y$0%rhsb^av4x+gkn8s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["128.199.103.26", "tributetours.com", "http://tributetours.com", "www.tributetours.com"]
+ALLOWED_HOSTS = ["128.199.103.26", "tributetoursandtreks.com",
+                 "http://tributetoursandtreks.com", "www.tributetoursandtreks.com"]
 
 # ALLOWED_HOSTS = ["128.199.103.26", "http://hemcotoursandtreks.com",
 #                  "www.hemcotoursandtreks.com", "hemcotoursandtreks.com"]
@@ -143,8 +144,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TINYMCE_DEFAULT_CONFIG = {
     'theme': "advanced",
-    'width' : 758,
-    'height' : 118,
+    'width': 758,
+    'height': 118,
     'plugins': "spellchecker",
     'theme_advanced_buttons3_add': "|,spellchecker",
 }
