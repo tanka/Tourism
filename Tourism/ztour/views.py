@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import DetailView
-from .forms import ContactForm, QuickForm
+from .forms import ContactForm
 from .models import Header, Post, Gallery
 from tinymce.models import HTMLField
 from django.core.mail import send_mail
@@ -14,7 +14,6 @@ class HomeView(View):
     def get(self, request, *args, **kwargs):
         # forms
         contact_form = ContactForm()
-        quick_contact = QuickForm()
         all_header = Header.objects.all()
 
         # Posts
@@ -24,14 +23,12 @@ class HomeView(View):
         context = {
             'all_header': all_header,
             'contact_form': contact_form,
-            'quick_contact': quick_contact,
             'all_posts': all_posts,
         }
         return render(request, "home.html", context)
 
     def post(self, request, *args, **kwargs):
         contact_form = ContactForm(request.POST)
-        quick_contact_form = QuickForm(request.POST)
         if contact_form.is_valid():
             contact = contact_form.save()
             # email = str(form.getValue('email'))
@@ -64,16 +61,20 @@ class ContactView(View):
         if form.is_valid():
             contact = form.save()
             # email = str(form.getValue('email'))
-            context = {'email': form.cleaned_data.get('email'),
-                       'name': form.cleaned_data.get('name')}
+            context = {'email': contact_form.cleaned_data.get('email'),
+                       'name': contact_form.cleaned_data.get('name'),
+                       'message': contact_form.cleaned_data.get('message'),
+                       'contact_number': contact_form.cleaned_data.get('contact_number'),
+                       }
+
+            # Send mail function
+            send_mail('subject', context['message'] + "  " + context['name'] + " " + context['contact_number'] + " " + context['email'],
+                      'info@mg.tributetoursandtreks.com', ['drukdial@gmail.com'])
 
             return render(request, 'message_submitted.html', context)
         else:
             form = ContactForm()
             return render(request, 'contact.html', {'form': form})
-
-    # context = {}
-    # return render(request, "contact.html", context)
 
 
 class PackageDetailView(DetailView):
@@ -84,31 +85,27 @@ class PackageDetailView(DetailView):
         context = super(PackageDetailView, self).get_context_data(**kwargs)
         # forms
         contact_form = ContactForm()
-        quick_contact = QuickForm()
         all_header = Header.objects.filter(activate=True)
-
         context['all_header'] = all_header
         context['contact_form'] = contact_form
-        context['quick_contact'] = quick_contact
 
         return context
 
     def post(self, request, *args, **kwargs):
 
         contact_form = ContactForm(request.POST)
-        quick_contact_form = QuickForm(request.POST)
         if contact_form.is_valid():
             contact = contact_form.save()
-            #email = str(form.getValue('email'))
+            # email = str(form.getValue('email'))
             context = {'email': contact_form.cleaned_data.get('email'),
-                       'name': contact_form.cleaned_data.get('name')}
+                       'name': contact_form.cleaned_data.get('name'),
+                       'message': contact_form.cleaned_data.get('message'),
+                       'contact_number': contact_form.cleaned_data.get('contact_number'),
+                       }
 
-            return render(request, 'message_submitted.html', context)
-        elif quick_contact_form.is_valid():
-            contact = quick_contact_form.save()
-            #email = str(form.getValue('email'))
-            context = {'email': quick_contact_form.cleaned_data.get('email'),
-                       'name': quick_contact_form.cleaned_data.get('name')}
+            # Send mail function
+            send_mail('subject', context['message'] + "  " + context['name'] + " " + context['contact_number'] + " " + context['email'],
+                      'info@mg.tributetoursandtreks.com', ['drukdial@gmail.com'])
 
             return render(request, 'message_submitted.html', context)
         else:
@@ -120,7 +117,6 @@ class GalleryView(View):
     def get(self, request, *args, **kwargs):
         # forms
         contact_form = ContactForm()
-        quick_contact = QuickForm()
         all_header = Header.objects.all()
         all_gallery_pics = Gallery.objects.all()
 
@@ -131,7 +127,6 @@ class GalleryView(View):
         context = {
             'all_header': all_header,
             'contact_form': contact_form,
-            'quick_contact': quick_contact,
             'all_posts': all_posts,
             'all_gallery_pics': all_gallery_pics,
         }
@@ -140,7 +135,6 @@ class GalleryView(View):
     def post(self, request, *args, **kwargs):
 
         contact_form = ContactForm(request.POST)
-        quick_contact_form = QuickForm(request.POST)
         if contact_form.is_valid():
             contact = contact_form.save()
             #email = str(form.getValue('email'))
@@ -148,13 +142,7 @@ class GalleryView(View):
                        'name': contact_form.cleaned_data.get('name')}
 
             return render(request, 'message_submitted.html', context)
-        elif quick_contact_form.is_valid():
-            contact = quick_contact_form.save()
-            #email = str(form.getValue('email'))
-            context = {'email': quick_contact_form.cleaned_data.get('email'),
-                       'name': quick_contact_form.cleaned_data.get('name')}
 
-            return render(request, 'message_submitted.html', context)
         else:
             form = ContactForm()
             return render(request, 'contact.html', {'form': form})
@@ -164,7 +152,6 @@ class ListPackageView(View):
     def get(self, request, *args, **kwargs):
         # forms
         contact_form = ContactForm()
-        quick_contact = QuickForm()
         all_header = Header.objects.all()
 
         # Posts
@@ -174,7 +161,6 @@ class ListPackageView(View):
         context = {
             'all_header': all_header,
             'contact_form': contact_form,
-            'quick_contact': quick_contact,
             'all_posts': all_posts,
         }
         return render(request, "listpackage.html", context)
@@ -182,21 +168,21 @@ class ListPackageView(View):
     def post(self, request, *args, **kwargs):
 
         contact_form = ContactForm(request.POST)
-        quick_contact_form = QuickForm(request.POST)
         if contact_form.is_valid():
             contact = contact_form.save()
-            #email = str(form.getValue('email'))
+            # email = str(form.getValue('email'))
             context = {'email': contact_form.cleaned_data.get('email'),
-                       'name': contact_form.cleaned_data.get('name')}
+                       'name': contact_form.cleaned_data.get('name'),
+                       'message': contact_form.cleaned_data.get('message'),
+                       'contact_number': contact_form.cleaned_data.get('contact_number'),
+                       }
+
+            # Send mail function
+            send_mail('subject', context['message'] + "  " + context['name'] + " " + context['contact_number'] + " " + context['email'],
+                      'info@mg.tributetoursandtreks.com', ['drukdial@gmail.com'])
 
             return render(request, 'message_submitted.html', context)
-        elif quick_contact_form.is_valid():
-            contact = quick_contact_form.save()
-            #email = str(form.getValue('email'))
-            context = {'email': quick_contact_form.cleaned_data.get('email'),
-                       'name': quick_contact_form.cleaned_data.get('name')}
 
-            return render(request, 'message_submitted.html', context)
         else:
             form = ContactForm()
             return render(request, 'contact.html', {'form': form})
