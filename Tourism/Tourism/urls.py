@@ -43,6 +43,7 @@ urlpatterns = [
     # django-tinymce
     url(r'^tinymce/', include('tinymce.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # Change admin site title
 admin.site.site_header = _("Tour Site Administration")

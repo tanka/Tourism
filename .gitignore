@@ -7,4 +7,6 @@ Tourism/settings/__pycache__/
 Tourism/Tourism/settings/__pycache__*
 Tourism/static/ztour/
 Tourism/static/
-
+*__pycache__/
+Tourism/media/
+Tourism/ztour/migrations/*
