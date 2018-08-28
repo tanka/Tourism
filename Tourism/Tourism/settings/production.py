@@ -32,12 +32,20 @@ ALLOWED_HOSTS = ["128.199.103.26", "tributetoursandtreks.com",
 # ALLOWED_HOSTS = ["128.199.103.26", "http://hemcotoursandtreks.com",
 #                  "www.hemcotoursandtreks.com", "hemcotoursandtreks.com"]
 
-EMAIL_HOST = 'smtp.mailgun.org'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'postmaster@mg.tributetoursandtreks.com'
-EMAIL_HOST_PASSWORD = '02dc4eea9555460c32a3aac4d255ce87-116e1e4d-667ec5d5'
-EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.mailgun.org'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'postmaster@mg.tributetoursandtreks.com'
+# EMAIL_HOST_PASSWORD = '02dc4eea9555460c32a3aac4d255ce87-116e1e4d-667ec5d5'
+# EMAIL_USE_TLS = True
 
+# directly send to gmail and not to info@tributetoursandtreks.com
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER = 'drukdial@gmail.com'
+EMAIL_HOST_PASSWORD = 'ifhtrxxuikpuhfqx'  
+DEFAULT_FROM_EMAIL = 'drukdial@gmail.com'
+EMAIL_USE_TLS = True
 
 # Application definition
 
