@@ -2,11 +2,11 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import DetailView
+from django.conf import settings
+from django.core.mail import send_mail
 from .forms import ContactForm
 from .models import Header, Post, Gallery
 from tinymce.models import HTMLField
-from django.core.mail import send_mail
-
 # Create your views here.
 
 
@@ -40,7 +40,7 @@ class HomeView(View):
 
             # Send mail function
             send_mail('subject', context['message'] + "  " + context['name'] + " " + context['contact_number'] + " " + context['email'],
-                      'info@mg.tributetoursandtreks.com', ['drukdial@gmail.com'])
+                      'drukdial@gmail.com', ['rinchug@gmail.com'])
 
             return render(request, 'message_submitted.html', context)
 
